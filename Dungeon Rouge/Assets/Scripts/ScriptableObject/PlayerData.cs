@@ -8,5 +8,5 @@ public class PlayerData : ScriptableObject
     [Header("PlayerInfo")]
     public int playerLv;
     public float playerAtk;
-    public float playerMaxHealth;
+    public int playerMaxHealth;
 }
