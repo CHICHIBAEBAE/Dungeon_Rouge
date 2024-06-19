@@ -1,27 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NormalBtn : MonoBehaviour
+public class ExitBtn : MonoBehaviour
 {
-    public GameObject description;
-
     public Animator anim;
     public string animName;
-    public Button normalBtn;
+    public Button exitBtn;
 
     private void Start()
     {
-        if (normalBtn != null)
+        if (exitBtn != null)
         {
-            normalBtn.onClick.AddListener(OnNormalBtn);
+            exitBtn.onClick.AddListener(OnExitBtn);
         }
     }
 
-    public void OnNormalBtn()
+    public void OnExitBtn()
     {
-        description.SetActive(true);
         anim.Play(animName);
     }
 }
