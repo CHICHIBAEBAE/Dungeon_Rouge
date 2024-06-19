@@ -1580,6 +1580,7 @@ MonoBehaviour:
   anim: {fileID: 45876822}
   animName: PageClose
   exitBtn: {fileID: 1953663475}
+  description: {fileID: 45876818}
 --- !u!1 &2142752792
 GameObject:
   m_ObjectHideFlags: 0
