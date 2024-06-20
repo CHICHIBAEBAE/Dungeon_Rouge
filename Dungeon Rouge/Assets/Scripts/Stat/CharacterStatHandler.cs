@@ -12,7 +12,7 @@ public class CharacterStatHandler : MonoBehaviour
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
 
-    // private readonly ·Î playerstatÀÇ ÃÖ¼Ò°ªÀ» Á¤ÇØÁÖ±â
+    // private readonly ï¿½ï¿½ playerstatï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
     private readonly float MinAttackDmg = 1.0f;
 
     private void Awake()
@@ -25,14 +25,14 @@ public class CharacterStatHandler : MonoBehaviour
         UpdateCharacterStat();
     }
 
-    // ¿ÜºÎ¿¡¼­ ½ºÅÈ º¯È­¸¦ ¾ò¾úÀ» ¶§ ex. À¯¹°, ¾ÆÀÌÅÛ, ¹öÇÁ
+    // ï¿½ÜºÎ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ex. ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½
     public void AddStatModifier(CharacterStat statModifier)
     {
         statsModifiers.Add(statModifier);
         UpdateCharacterStat();
     }
 
-    // ½ºÅÈ º¯È­ ÇØÁ¦ ex. ¾ÆÀÌÅÛ ÀåÂøÀ» ÇØÁ¦ÇÑ´Ù´øÁö
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ex. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù´ï¿½ï¿½ï¿½
     public void RemoveStatModifier(CharacterStat statModifier)
     {
         statsModifiers.Remove(statModifier);
@@ -41,11 +41,11 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void UpdateCharacterStat()
     {
-        // º£ÀÌ½º ½ºÅÈ ¸ÕÀú Àû¿ëÇÑ ÈÄ
+        // ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         ApplyStatModifier(baseStats);
 
-        // º¯°æµÇ´Â ¼öÄ¡µéÀ»
-        // statsChangeType enum ¼ø¼­¿¡ ¸Â°Ô Add, Multiple, Override ¼øÀ¸·Î ¹Ý¿µ
+        // ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
+        // statsChangeType enum ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Â°ï¿½ Add, Multiple, Override ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½
         foreach(CharacterStat stat in statsModifiers.OrderBy(o => o.statsChangeType))
         {
             ApplyStatModifier(stat);
@@ -72,13 +72,13 @@ public class CharacterStatHandler : MonoBehaviour
         var currentAttack = CurrentStat.playerData;
         var newAttack = modifier.playerData;
         
-        // TODO : À§¿¡¼­ ÃÖ¼Ò°ªÀ» Á¤ÇØÁÖ´Â ÄÚµå°¡ »ý±â¸é º¯°æÀ» Àû¿ëÇÏµÇ, ÃÖ¼Ò°ªÀ» Á¤ÇØÁÖ´Â ÄÚµå ÀÛ¼º
+        // TODO : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½, ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Úµï¿½ ï¿½Û¼ï¿½
         currentAttack.playerAtk = Mathf.Max(operation(currentAttack.playerAtk, newAttack.playerAtk), MinAttackDmg);
     }
         
 
     private void UpdateBasicStats(Func<float, float, float> operation, CharacterStat modifier)
     {
-        // TODO : À§¿¡¼­ ÃÖ¼Ò°ªÀ» Á¤ÇØÁÖ´Â ÄÚµå°¡ »ý±â¸é º¯°æÀ» Àû¿ëÇÏµÇ, ÃÖ¼Ò°ªÀ» Á¤ÇØÁÖ´Â ÄÚµå ÀÛ¼º
+        // TODO : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½, ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Úµï¿½ ï¿½Û¼ï¿½
     }
 }
