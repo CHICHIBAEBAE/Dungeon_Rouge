@@ -14,5 +14,5 @@ public enum StatsChangeType
 public class CharacterStat
 {
     public StatsChangeType statsChangeType;
-    public PlayerData playerData;
+    public StatData statData;
 }
