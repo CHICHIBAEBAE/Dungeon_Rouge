@@ -10,6 +10,7 @@ public class BtnData : ScriptableObject
     public Sprite btnIcon;
     public string btnName;
     public string btnDescription;
+    public string loadSceneName;
 
     [Header("Result Info")]
     public Sprite resultIcon;

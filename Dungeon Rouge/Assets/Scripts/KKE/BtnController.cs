@@ -30,15 +30,22 @@ public class BtnController : MonoBehaviour
         
         if (btn != null)
         {
-            btn.onClick.AddListener(OnNormalBtn);
+            btn.onClick.AddListener(OnClickBtn);
         }
     }
 
-    public void OnNormalBtn()
+    public void OnClickBtn()
     {
         descriptionManager.SetDescription(btnData);
         description.SetActive(true);
         anim.Play(animName);
+
+        CheckBtn checkBtn = FindObjectOfType<CheckBtn>();
+
+        if (checkBtn != null)
+        {
+            checkBtn.sceneName = btnData.loadSceneName;
+        }
     }
     public void OnLogBtn()
     {        

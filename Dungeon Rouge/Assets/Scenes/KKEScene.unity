@@ -1426,6 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stamp: {fileID: 5044790445885115859}
+  sceneName: 
 --- !u!1 &1475031398
 GameObject:
   m_ObjectHideFlags: 0

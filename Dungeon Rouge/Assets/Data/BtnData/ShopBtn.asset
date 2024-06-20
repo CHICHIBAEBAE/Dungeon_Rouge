@@ -15,6 +15,7 @@ MonoBehaviour:
   btnIcon: {fileID: 398192993, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
   btnName: "<color=blue>\uC0C1 \uC810</color>"
   btnDescription: 
+  loadSceneName: JunghoScene
   resultIcon: {fileID: 1780668137, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
   resultName: "\uC544\uC774\uD15C \uAD6C\uB9E4 \uAC00\uB2A5"
   stageName: "<color=blue>\uC0C1 \uC810 \uC2A4\uD14C\uC774\uC9C0</color>"

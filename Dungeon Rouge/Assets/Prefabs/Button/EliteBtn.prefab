@@ -203,8 +203,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7371816010583263944}
-        m_TargetAssemblyTypeName: NormalBtn, Assembly-CSharp
-        m_MethodName: OnNormalBtn
+        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

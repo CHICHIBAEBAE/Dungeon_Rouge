@@ -199,8 +199,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4884850994959531256}
-        m_TargetAssemblyTypeName: NormalBtn, Assembly-CSharp
-        m_MethodName: OnNormalBtn
+        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -225,7 +225,8 @@ MonoBehaviour:
   description: {fileID: 0}
   anim: {fileID: 0}
   animName: PageOpen
-  normalBtn: {fileID: 6575908690245281074}
+  btn: {fileID: 6575908690245281074}
+  btnData: {fileID: 11400000, guid: 3fbada429a9f5c84ca0e6d09a00181a8, type: 2}
 --- !u!1 &5872963434836157439
 GameObject:
   m_ObjectHideFlags: 0
