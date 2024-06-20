@@ -13,6 +13,16 @@ public class NormalBtn : MonoBehaviour
 
     private void Start()
     {
+        if (description == null)
+        {
+            description = GameObject.Find("Description_UI").transform.Find("Description").gameObject;
+        }
+
+        if (anim == null && description != null)
+        {
+            anim = description.GetComponent<Animator>();
+        }
+        
         if (normalBtn != null)
         {
             normalBtn.onClick.AddListener(OnNormalBtn);
