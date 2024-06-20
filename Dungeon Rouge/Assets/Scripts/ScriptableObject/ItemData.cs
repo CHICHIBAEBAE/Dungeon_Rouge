@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemData : StatData
 {
     [Header("ItemInfo")]
+
     public string ItemName;
     public string ItemInfo;
     public int ItemGold;

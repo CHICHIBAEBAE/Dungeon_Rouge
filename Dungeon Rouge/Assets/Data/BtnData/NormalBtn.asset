@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
+  m_Name: NormalBtn
+  m_EditorClassIdentifier: 
+  btnIcon: {fileID: -1942885991, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  btnName: "\uC77C\uBC18 \uBAAC\uC2A4\uD130"
+  btnDescription: 
+  resultIcon: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  resultName: "\uC77C\uC815\uB7C9\uC758 \uAE08\uD654"
+  stageName: "\uC77C\uBC18 \uBAAC\uC2A4\uD130 \uC2A4\uD14C\uC774\uC9C0"
+  stageDescription: "\uBAAC\uC2A4\uD130 \uCC98\uCE58 \uC2DC \uC77C\uC815\uB7C9\uC758
+    \uAE08\uD654 \uD68D\uB4DD \uAC00\uB2A5"
