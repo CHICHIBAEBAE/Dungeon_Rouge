@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NormalBtn : MonoBehaviour
+public class BtnController : MonoBehaviour
 {
     public GameObject description;
 
     public Animator anim;
     public string animName;
-    public Button normalBtn;
+    public Button btn;
+
+    public BtnData btnData;
+    private DescriptionManager descriptionManager;
 
     private void Start()
     {
+        descriptionManager = FindObjectOfType<DescriptionManager>();
+
         if (description == null)
         {
             description = GameObject.Find("Description_UI").transform.Find("Description").gameObject;
@@ -23,14 +28,15 @@ public class NormalBtn : MonoBehaviour
             anim = description.GetComponent<Animator>();
         }
         
-        if (normalBtn != null)
+        if (btn != null)
         {
-            normalBtn.onClick.AddListener(OnNormalBtn);
+            btn.onClick.AddListener(OnNormalBtn);
         }
     }
 
     public void OnNormalBtn()
     {
+        descriptionManager.SetDescription(btnData);
         description.SetActive(true);
         anim.Play(animName);
     }
