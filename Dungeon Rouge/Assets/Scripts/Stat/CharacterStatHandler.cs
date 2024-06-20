@@ -12,27 +12,28 @@ public class CharacterStatHandler : MonoBehaviour
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
 
-    // private readonly 로 playerstat의 최소값을 정해주기
+    private readonly int MinLv = 1;
     private readonly float MinAttackDmg = 1.0f;
+    private readonly int MinMaxHealth = 1;
 
     private void Awake()
     {
-        if(baseStats.playerData != null)
+        if (baseStats.statData != null)
         {
-            baseStats.playerData = Instantiate(baseStats.playerData);
-            CurrentStat.playerData = Instantiate(baseStats.playerData);
+            baseStats.statData = Instantiate(baseStats.statData);
+            CurrentStat.statData = Instantiate(baseStats.statData);
         }
         UpdateCharacterStat();
     }
 
-    // 외부에서 스탯 변화를 얻었을 때 ex. 유물, 아이템, 버프
+
     public void AddStatModifier(CharacterStat statModifier)
     {
         statsModifiers.Add(statModifier);
         UpdateCharacterStat();
     }
 
-    // 스탯 변화 해제 ex. 아이템 장착을 해제한다던지
+
     public void RemoveStatModifier(CharacterStat statModifier)
     {
         statsModifiers.Remove(statModifier);
@@ -41,12 +42,9 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void UpdateCharacterStat()
     {
-        // 베이스 스탯 먼저 적용한 후
         ApplyStatModifier(baseStats);
 
-        // 변경되는 수치들을
-        // statsChangeType enum 순서에 맞게 Add, Multiple, Override 순으로 반영
-        foreach(CharacterStat stat in statsModifiers.OrderBy(o => o.statsChangeType))
+        foreach (CharacterStat stat in statsModifiers.OrderBy(o => o.statsChangeType))
         {
             ApplyStatModifier(stat);
         }
@@ -54,31 +52,30 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void ApplyStatModifier(CharacterStat modifier)
     {
-        Func<float, float, float> operation = modifier.statsChangeType switch
+        Func<float, float, float> operation = Operation(modifier.statsChangeType);
+
+        UpdateAllStats(operation, modifier);
+    }
+
+    private Func<float, float, float> Operation(StatsChangeType statsChangeType)
+    {
+        return statsChangeType switch
         {
             StatsChangeType.Add => (current, change) => current + change,
             StatsChangeType.Multiple => (current, change) => current * change,
             StatsChangeType.Override => (current, change) => change
         };
-
-        UpdateBasicStats(operation, modifier);
-        UpdateAttackStats(operation, modifier);
     }
 
-    private void UpdateAttackStats(Func<float, float, float> operation, CharacterStat modifier)
+    private void UpdateAllStats(Func<float, float, float> operation, CharacterStat modifier)
     {
-        if(CurrentStat.playerData == null || modifier.playerData == null) return;
+        if (CurrentStat.statData == null || modifier.statData == null) return;
 
-        var currentAttack = CurrentStat.playerData;
-        var newAttack = modifier.playerData;
-        
-        // TODO : 위에서 최소값을 정해주는 코드가 생기면 변경을 적용하되, 최소값을 정해주는 코드 작성
-        currentAttack.playerAtk = Mathf.Max(operation(currentAttack.playerAtk, newAttack.playerAtk), MinAttackDmg);
-    }
-        
+        var currentStat = CurrentStat.statData;
+        var newStat = modifier.statData;
 
-    private void UpdateBasicStats(Func<float, float, float> operation, CharacterStat modifier)
-    {
-        // TODO : 위에서 최소값을 정해주는 코드가 생기면 변경을 적용하되, 최소값을 정해주는 코드 작성
+        currentStat.Atk = Mathf.Max(operation(currentStat.Atk, newStat.Atk), MinAttackDmg);
+        currentStat.MaxHealth = Mathf.Max((int)operation(currentStat.MaxHealth, newStat.MaxHealth), MinMaxHealth);
+        currentStat.Lv = Mathf.Max((int)operation(currentStat.Lv, newStat.Lv), MinLv);
     }
 }

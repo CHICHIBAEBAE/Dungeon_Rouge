@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
+  m_Name: BossBtn
+  m_EditorClassIdentifier: 
+  btnIcon: {fileID: 1300743815, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  btnName: "<color=red>\uBCF4 \uC2A4</color>"
+  btnDescription: 
+  resultIcon: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  resultName: "\uC77C\uC815\uB7C9\uC758 \uAE08\uD654"
+  resultDescription: 
