@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 27.5, y: 0}
-  m_SizeDelta: {x: 144.99998, y: 0}
+  m_AnchoredPosition: {x: 37.500004, y: 0}
+  m_SizeDelta: {x: 125.00001, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6378034646197583424
 CanvasRenderer:
@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC0C1\uC810"
+  m_Text: "\uC0C1 \uC810"
 --- !u!1 &7322103685201041910
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +229,8 @@ MonoBehaviour:
   description: {fileID: 0}
   anim: {fileID: 0}
   animName: PageOpen
-  normalBtn: {fileID: 7397388320382507377}
+  btn: {fileID: 7397388320382507377}
+  btnData: {fileID: 11400000, guid: b38fab7248ef33d439dfbacb5c90e811, type: 2}
 --- !u!1 &8600154604778775239
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +266,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 60, y: 60}
+  m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3672642991760786580
 CanvasRenderer:
@@ -295,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  m_Sprite: {fileID: 398192993, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
