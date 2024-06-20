@@ -1,13 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObjects/ItemData", order = 3)]
-public class ItemData : ScriptableObject
+public class ItemData : StatData
 {
     [Header("ItemInfo")]
-    public int ItemLv;
     public string ItemName;
     public string ItemInfo;
-    public float ItemAtk;
-    public float ItemHealth;
     public int ItemGold;
 }

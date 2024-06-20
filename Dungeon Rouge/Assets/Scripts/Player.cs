@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] PlayerData playerData;
+    [SerializeField] StatData playerData;
 
     void Start()
     {
@@ -18,6 +18,6 @@ public class Player : MonoBehaviour
 
     public void OnAttack()
     {
-        Debug.Log($"{playerData.playerAtk}!!!");
+        Debug.Log($"{playerData.Atk}!!!");
     }
 }
