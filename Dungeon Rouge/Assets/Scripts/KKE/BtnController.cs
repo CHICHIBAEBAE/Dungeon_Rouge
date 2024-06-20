@@ -39,10 +39,5 @@ public class BtnController : MonoBehaviour
         descriptionManager.SetDescription(btnData);
         description.SetActive(true);
         anim.Play(animName);
-    }
-    public void OnLogBtn()
-    {        
-        description.SetActive(true);
-        anim.Play(animName);
-    }
+    }   
 }
