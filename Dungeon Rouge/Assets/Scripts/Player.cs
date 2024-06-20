@@ -5,10 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] StatData playerData;
+    public CharacterStatHandler characterStatHandler;
 
     void Start()
     {
-        
+        characterStatHandler = GetComponent<CharacterStatHandler>();
     }
 
     void Update()
@@ -18,6 +19,6 @@ public class Player : MonoBehaviour
 
     public void OnAttack()
     {
-        Debug.Log($"{playerData.Atk}!!!");
+        Debug.Log($"{characterStatHandler.CurrentStat.statData.Atk}!!!");
     }
 }
