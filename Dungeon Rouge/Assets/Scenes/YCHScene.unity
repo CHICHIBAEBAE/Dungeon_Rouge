@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifact: {fileID: 0}
+  player: {fileID: 2099952616}
 --- !u!61 &1640814538
 BoxCollider2D:
   m_ObjectHideFlags: 0

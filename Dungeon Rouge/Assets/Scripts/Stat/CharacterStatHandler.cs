@@ -42,9 +42,7 @@ public class CharacterStatHandler : MonoBehaviour
 
     private void UpdateCharacterStat()
     {
-
         ApplyStatModifier(baseStats);
-
 
         foreach (CharacterStat stat in statsModifiers.OrderBy(o => o.statsChangeType))
         {
