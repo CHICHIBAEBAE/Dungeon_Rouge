@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObjects/ItemData", order = 3)]
 public class ItemData : ScriptableObject
 {
     [Header("ItemInfo")]
-    public Image ItemImg;
+    public Sprite ItemImg;
     public int ItemLv;
     public string ItemName;
     public string ItemInfo;

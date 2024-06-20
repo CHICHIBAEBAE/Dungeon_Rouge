@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShopUI : MonoBehaviour
 {    
     public Text[] ItemGold=new Text[5];
-    public Image[] ItemImg=new Image[5];    
+    public Image[] ItemImg=new Image[5];
     public Text ItemName;
     public Text ItemInfo; 
     public List<ItemData> ItemList;    
@@ -20,13 +20,13 @@ public class ShopUI : MonoBehaviour
     {        
         for (int i = 0; i < 4;i++)
         {
-            //ItemImg[i]=ItemList[r[i]].ItemImage;
+            //ItemImg[i]=ItemList[r[i]].ItemImg;
             ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();
         }
     }
     public void OnSelect(int btnNum)
     {                
-        //ItemImg[i]=ItemList[btnNum].ItemImage;
+        //ItemImg[i]=ItemList[btnNum].ItemImg;
         ItemName.text=ItemList[btnNum].ItemName.ToString();
         ItemInfo.text=ItemList[btnNum].ItemInfo.ToString();
         ItemGold[4].text=ItemList[btnNum].ItemGold.ToString();               

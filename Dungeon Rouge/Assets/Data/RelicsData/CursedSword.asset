@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
   m_Name: CursedSword
   m_EditorClassIdentifier: 
+  ItemImg: {fileID: 21300000, guid: 47919460aef481f429dde558b8ae5ccd, type: 3}
   ItemLv: 1
   ItemName: "\uC800\uC8FC\uBC1B\uC740 \uAC80"
   ItemInfo: "\uD558\uC774 \uB9AC\uC2A4\uD06C \uD558\uC774 \uB9AC\uD134"
