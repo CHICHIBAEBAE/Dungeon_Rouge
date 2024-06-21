@@ -17,14 +17,14 @@ public class BattleController : MonoBehaviour
     private bool isPlayerTurn = true;
     private bool playerActionCompleted = false;
 
-    private int playerHealth = 100;
+
     private float enemyHealth = 100f;
 
     void Start()
     {
         attackButton.onClick.AddListener(OnPlayerAttack);
-        playerHPBar.maxValue = playerHealth;
-        playerHPBar.value = playerHealth;
+        playerHPBar.maxValue = characterStatHandler.CurrentStat.statData.MaxHealth;
+        playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth;
         enemyHPBar.maxValue = enemyHealth;
         enemyHPBar.value = enemyHealth;
         StartCoroutine(Battle());
@@ -32,7 +32,7 @@ public class BattleController : MonoBehaviour
 
     IEnumerator Battle()
     {
-        while (playerHealth > 0 && enemyHealth > 0)
+        while (characterStatHandler.CurrentStat.statData.MaxHealth > 0 && enemyHealth > 0)
         {
             if (isPlayerTurn)
             {
@@ -55,7 +55,7 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(4.0f);
         }
 
-        if (playerHealth <= 0)
+        if (characterStatHandler.CurrentStat.statData.MaxHealth <= 0)
         {
             Debug.Log("Player is defeated");
             yield return StartCoroutine(TypeText("Player is defeated"));
@@ -85,12 +85,12 @@ public class BattleController : MonoBehaviour
     void EnemyAttack()
     {
         int damage = Random.Range(10, 20);
-        playerHealth -= damage;
-        Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {playerHealth}");
-        string message = $"Enemy attacked the player for {damage} damage. Player health: {playerHealth}";
+        characterStatHandler.CurrentStat.statData.MaxHealth -= damage;
+        Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}");
+        string message = $"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}";
         StartCoroutine(TypeText(message));
 
-        playerHPBar.value = playerHealth;
+        playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth;
     }
 
     IEnumerator TypeText(string message)
