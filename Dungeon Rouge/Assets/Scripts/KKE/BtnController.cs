@@ -39,17 +39,5 @@ public class BtnController : MonoBehaviour
         descriptionManager.SetDescription(btnData);
         description.SetActive(true);
         anim.Play(animName);
-
-        CheckBtn checkBtn = FindObjectOfType<CheckBtn>();
-
-        if (checkBtn != null)
-        {
-            checkBtn.sceneName = btnData.loadSceneName;
-        }
-    }
-    public void OnLogBtn()
-    {        
-        description.SetActive(true);
-        anim.Play(animName);
-    }
+    }   
 }

@@ -797,7 +797,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329082850}
-        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopBtn, Assembly-CSharp
         m_MethodName: OnLogBtn
         m_Mode: 1
         m_Arguments:
@@ -829,14 +829,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 329082845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1376472555fe2094eb1182a55f8a433d, type: 3}
+  m_Script: {fileID: 11500000, guid: 954e124b34aaf99418f87cabd4c4fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
-  btn: {fileID: 329082849}
-  btnData: {fileID: 11400000, guid: bdf517814b52c924e8d1b2c0bdce3f1c, type: 2}
 --- !u!1 &412861428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,7 +3598,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329082850}
-        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopBtn, Assembly-CSharp
         m_MethodName: OnLogBtn
         m_Mode: 1
         m_Arguments:
@@ -3632,14 +3630,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757037737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1376472555fe2094eb1182a55f8a433d, type: 3}
+  m_Script: {fileID: 11500000, guid: 954e124b34aaf99418f87cabd4c4fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
-  btn: {fileID: 1757037741}
-  btnData: {fileID: 11400000, guid: bdf517814b52c924e8d1b2c0bdce3f1c, type: 2}
 --- !u!1 &1762347169
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,7 +3759,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329082850}
-        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopBtn, Assembly-CSharp
         m_MethodName: OnLogBtn
         m_Mode: 1
         m_Arguments:
@@ -3795,14 +3791,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762347169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1376472555fe2094eb1182a55f8a433d, type: 3}
+  m_Script: {fileID: 11500000, guid: 954e124b34aaf99418f87cabd4c4fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
-  btn: {fileID: 1762347173}
-  btnData: {fileID: 11400000, guid: bdf517814b52c924e8d1b2c0bdce3f1c, type: 2}
 --- !u!1 &1797693919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,56 +4069,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShopPanel: {fileID: 1189203267}
   RandomPanel: {fileID: 974042349}
---- !u!1 &1943132481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1943132483}
-  - component: {fileID: 1943132482}
-  m_Layer: 0
-  m_Name: DescriptionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1943132482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943132481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450107659f326c44cb19465399ac1deb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  btnIcon: {fileID: 0}
-  resultIcon: {fileID: 0}
-  btnName: {fileID: 0}
-  resultTxt: {fileID: 0}
-  stageName: {fileID: 0}
-  stageDescription: {fileID: 0}
---- !u!4 &1943132483
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943132481}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 313, y: 801, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983002024
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,7 +4452,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 329082850}
-        m_TargetAssemblyTypeName: BtnController, Assembly-CSharp
+        m_TargetAssemblyTypeName: ShopBtn, Assembly-CSharp
         m_MethodName: OnLogBtn
         m_Mode: 1
         m_Arguments:
@@ -4540,14 +4484,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010066604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1376472555fe2094eb1182a55f8a433d, type: 3}
+  m_Script: {fileID: 11500000, guid: 954e124b34aaf99418f87cabd4c4fad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
-  btn: {fileID: 2010066608}
-  btnData: {fileID: 11400000, guid: bdf517814b52c924e8d1b2c0bdce3f1c, type: 2}
 --- !u!1 &2069670938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,4 +4733,3 @@ SceneRoots:
   - {fileID: 1986033690}
   - {fileID: 1844907496}
   - {fileID: 221292845}
-  - {fileID: 1943132483}

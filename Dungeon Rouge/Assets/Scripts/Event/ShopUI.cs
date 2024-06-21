@@ -20,16 +20,17 @@ public class ShopUI : MonoBehaviour
     {        
         for (int i = 0; i < 4;i++)
         {
-            //ItemImg[i]=ItemList[r[i]].ItemImg;
+            ItemImg[i].sprite=ItemList[r[i]].ItemImg;
             ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();
+            //Debug.Log(i+" : "+r[i]);
         }
     }
     public void OnSelect(int btnNum)
-    {                
-        //ItemImg[i]=ItemList[btnNum].ItemImg;
-        ItemName.text=ItemList[btnNum].ItemName.ToString();
-        ItemInfo.text=ItemList[btnNum].ItemInfo.ToString();
-        ItemGold[4].text=ItemList[btnNum].ItemGold.ToString();               
+    {           
+        ItemName.text=ItemList[r[btnNum]].ItemName.ToString();
+        ItemInfo.text=ItemList[r[btnNum]].ItemInfo.ToString();
+        ItemGold[4].text=ItemList[r[btnNum]].ItemGold.ToString();
+        ItemImg[4].sprite=ItemList[r[btnNum]].ItemImg;
     }
 
     public void OnHeal()
@@ -41,13 +42,13 @@ public class ShopUI : MonoBehaviour
     {         
         RandomValue(r,0,ItemList.Count);        
         ShowDisplay();
-        Debug.Log($"{r[0]}, {r[1]}, {r[2]}, {r[3]}");
+        //Debug.Log($"{r[0]}, {r[1]}, {r[2]}, {r[3]}");
     }
 
     void RandomValue(int[] _r,int min,int max)
     {
         List<int> numList=new List<int>();
-        for(int i=min; i<max;i++) numList.Add(i); //Make >> numList= (0,1,2,3,4)  
+        for(int i=min; i<max;i++) numList.Add(i); //Make >> numList= (0,1,2,3,4)
 
         for(int i=0; i<_r.Length;i++)
         {
