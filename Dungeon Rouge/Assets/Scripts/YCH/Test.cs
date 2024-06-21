@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    
     [SerializeField] StatData playerData;
     public CharacterStatHandler characterStatHandler;
 
     void Start()
     {
         characterStatHandler = GetComponent<CharacterStatHandler>();
-    }
-
-    void Update()
-    {
-
     }
 
     public void OnAttack()
