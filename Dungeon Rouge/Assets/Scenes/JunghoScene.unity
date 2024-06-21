@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 5939982}
   - component: {fileID: 5939981}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: EventNameTxt(Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2970,6 +2970,7 @@ GameObject:
   - component: {fileID: 1185987637}
   - component: {fileID: 1185987640}
   - component: {fileID: 1185987639}
+  - component: {fileID: 1185987641}
   - component: {fileID: 1185987638}
   m_Layer: 5
   m_Name: Choice1
@@ -3042,7 +3043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1185987639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711022959}
+        m_TargetAssemblyTypeName: RandomUI, Assembly-CSharp
+        m_MethodName: OnChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1185987639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3081,6 +3094,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185987636}
   m_CullTransparentMesh: 1
+--- !u!114 &1185987641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185987636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8637ba741bff6e14699affdd2dfc27e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1314542400}
+  animName: PageClose
+  exitBtn: {fileID: 1185987638}
+  description: {fileID: 1314542398}
 --- !u!1 &1189203267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,6 +3411,7 @@ GameObject:
   - component: {fileID: 1317592394}
   - component: {fileID: 1317592397}
   - component: {fileID: 1317592396}
+  - component: {fileID: 1317592398}
   - component: {fileID: 1317592395}
   m_Layer: 5
   m_Name: Choice2
@@ -3454,7 +3484,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1317592396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711022959}
+        m_TargetAssemblyTypeName: RandomUI, Assembly-CSharp
+        m_MethodName: OnChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1317592396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3493,6 +3535,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317592393}
   m_CullTransparentMesh: 1
+--- !u!114 &1317592398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317592393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8637ba741bff6e14699affdd2dfc27e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1314542400}
+  animName: PageClose
+  exitBtn: {fileID: 1317592395}
+  description: {fileID: 1314542398}
 --- !u!1 &1392700972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,7 +4217,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1529544622}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1711022959}
+        m_TargetAssemblyTypeName: RandomUI, Assembly-CSharp
+        m_MethodName: OnChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1844907497}
+        m_TargetAssemblyTypeName: EventSceneUI, Assembly-CSharp
+        m_MethodName: OnEventExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1529544621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4173,7 +4255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1314542400}
-  animName: PageClose2
+  animName: PageClose
   exitBtn: {fileID: 1529544620}
   description: {fileID: 1314542398}
 --- !u!114 &1529544622
@@ -4474,7 +4556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC120\uD0DD \uD3EC\uAE30"
+  m_Text: "\uAE38\uC744 \uB098\uC120\uB2E4."
 --- !u!222 &1627068570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4727,6 +4809,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7aa120fc1aef214f95ecf231b25f839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ranPanel: {fileID: 974042349}
+  Description: {fileID: 1314542398}
+  EventName: {fileID: 5939981}
+  EventInfo: {fileID: 1587333402}
+  Choice1: {fileID: 1112784031}
+  Choice2: {fileID: 432044309}
+  Choice2Btn: {fileID: 1317592393}
+  Choice3Btn: {fileID: 1529544618}
+  eventList:
+  - {fileID: 11400000, guid: dcea8990dedfdf54b8a7d8da24903d91, type: 2}
+  - {fileID: 11400000, guid: 80bbe9cf67f52794ba455b68cc2ab852, type: 2}
+  - {fileID: 11400000, guid: d23d14f2a0e6fd94bb4109e3fbd5b559, type: 2}
+  - {fileID: 11400000, guid: 021857010522320419bcf39b26c8d20d, type: 2}
+  - {fileID: 11400000, guid: 63571a1798ab1a949932c6dab7f8c36a, type: 2}
+  - {fileID: 11400000, guid: cf4d4b620df293343a39ed1fcd82c1c8, type: 2}
+  - {fileID: 11400000, guid: c773eb7f8d984a44397613668478ee57, type: 2}
 --- !u!1 &1744169055
 GameObject:
   m_ObjectHideFlags: 0
