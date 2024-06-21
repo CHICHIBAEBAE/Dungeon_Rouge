@@ -11,8 +11,10 @@ public class CheckBtn : MonoBehaviour
 
     public void OnCheckBtn()
     {
+        //Debug.Log($"{btnData.styleidx}");
         stamp.SetActive(true);
-        //DataManager.instance.styleIdx = btnData.styleidx;
+        DataManager.instance.styleIdx = btnData.styleidx;
+
 
         if (!string.IsNullOrEmpty(sceneName))
         {
