@@ -9,12 +9,17 @@ public class ShopUI : MonoBehaviour
     public Image[] ItemImg=new Image[5];
     public Text ItemName;
     public Text ItemInfo; 
-    public List<ItemData> ItemList;    
-    int[] r= new int[4];      
+    public List<ItemData> ItemList;
+    int[] r= new int[4]; 
+    Artifact artifact;
+    ArtifactModifiers ItemMod;
+    public GameObject player;    
     
     void Start() 
     {   
-        OnRerole();
+        OnRerole();        
+        artifact = GetComponent<Artifact>();
+        ItemMod=GetComponent<ArtifactModifiers>();
     }
     void ShowDisplay()
     {        
@@ -30,11 +35,20 @@ public class ShopUI : MonoBehaviour
         ItemInfo.text=ItemList[r[btnNum]].ItemInfo.ToString();
         ItemGold[4].text=ItemList[r[btnNum]].ItemGold.ToString();
         ItemImg[4].sprite=ItemList[r[btnNum]].ItemImg;
+        
     }
+    
 
     public void OnHeal()
     {
 
+    }
+
+    public void BayItem()
+    {
+        Debug.Log("구매");
+        //Player.stat.gold-=ItemList[r[btnNum]].ItemGold;
+        artifact.UseArtifact(player);
     }
 
     public void OnRerole()
