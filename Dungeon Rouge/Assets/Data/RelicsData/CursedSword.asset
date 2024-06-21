@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
   m_Name: CursedSword
   m_EditorClassIdentifier: 
-
-  Lv: 0
-  Atk: 0
-  MaxHealth: 0
+  Lv: 1
+  Atk: 10
+  MaxHealth: -10
   ItemImg: {fileID: 21300000, guid: 47919460aef481f429dde558b8ae5ccd, type: 3}
-  ItemName: "\uC800\uC8FC\uAC80"
-  ItemInfo: "\uC800\uC8FC\uAC80"
-  ItemGold: 500
-
+  ItemName: "\uC800\uC8FC\uBC1B\uC740\uAC80"
+  ItemInfo: "\uC800\uC8FC\uBC1B\uC740\uAC80\uC774\uB2E4 \uACF5\uACA9\uB82510,\uCD5C\uB300\uCCB4\uB825-10\uC744
+    \uC900\uB2E4"
+  ItemGold: 200

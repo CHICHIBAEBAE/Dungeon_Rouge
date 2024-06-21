@@ -21,8 +21,7 @@ public class ShopUI : MonoBehaviour
         for (int i = 0; i < 4;i++)
         {
             ItemImg[i].sprite=ItemList[r[i]].ItemImg;
-            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();
-            //Debug.Log(i+" : "+r[i]);
+            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();            
         }
     }
     public void OnSelect(int btnNum)
@@ -41,8 +40,7 @@ public class ShopUI : MonoBehaviour
     public void OnRerole()
     {         
         RandomValue(r,0,ItemList.Count);        
-        ShowDisplay();
-        //Debug.Log($"{r[0]}, {r[1]}, {r[2]}, {r[3]}");
+        ShowDisplay();        
     }
 
     void RandomValue(int[] _r,int min,int max)
