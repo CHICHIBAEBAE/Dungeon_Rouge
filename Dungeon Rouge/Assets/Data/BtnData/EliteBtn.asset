@@ -21,3 +21,5 @@ MonoBehaviour:
   stageName: "<color=orange>\uC815\uC608 \uBAAC\uC2A4\uD130 \uC2A4\uD14C\uC774\uC9C0</color>"
   stageDescription: "\uBAAC\uC2A4\uD130 \uCC98\uCE58 \uC2DC \uC720\uBB3C \uD68D\uB4DD
     \uAC00\uB2A5"
+  prefab: {fileID: 7625327328565950356, guid: e2b1227b536a3ed4f9c864e96c29610f, type: 3}
+  probability: 0.2

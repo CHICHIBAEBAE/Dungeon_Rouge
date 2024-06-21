@@ -7,6 +7,7 @@ public class CheckBtn : MonoBehaviour
 {
     public GameObject stamp;
     public string sceneName;
+    public BtnData btnData;
 
     public void OnCheckBtn()
     {
@@ -21,5 +22,6 @@ public class CheckBtn : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
+        DataManager.instance.styleIdx = btnData.styleidx;
     }
 }
