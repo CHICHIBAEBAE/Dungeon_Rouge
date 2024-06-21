@@ -8,6 +8,8 @@ public class BattleController : MonoBehaviour
 {
     public Text battleLog;
     public Button attackButton;
+    public Slider playerHPBar;
+    public Slider enemyHPBar;
     public float typingSpeed = 0.05f;
 
     private bool isPlayerTurn = true;
@@ -19,6 +21,10 @@ public class BattleController : MonoBehaviour
     void Start()
     {
         attackButton.onClick.AddListener(OnPlayerAttack);
+        playerHPBar.maxValue = playerHealth;
+        playerHPBar.value = playerHealth;
+        enemyHPBar.maxValue = enemyHealth;
+        enemyHPBar.value = enemyHealth;
         StartCoroutine(Battle());
     }
 
@@ -69,6 +75,8 @@ public class BattleController : MonoBehaviour
             string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyHealth}";
             StartCoroutine(TypeText(message));
             playerActionCompleted = true;
+
+            enemyHPBar.value = enemyHealth;
         }
     }
 
@@ -79,6 +87,8 @@ public class BattleController : MonoBehaviour
         Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {playerHealth}");
         string message = $"Enemy attacked the player for {damage} damage. Player health: {playerHealth}";
         StartCoroutine(TypeText(message));
+
+        playerHPBar.value = playerHealth;
     }
 
     IEnumerator TypeText(string message)

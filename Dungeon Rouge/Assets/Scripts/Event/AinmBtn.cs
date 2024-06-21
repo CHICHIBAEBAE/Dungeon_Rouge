@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShopBtn : MonoBehaviour
+public class AinmBtn : MonoBehaviour
 {
     public GameObject description;
 
