@@ -16,6 +16,7 @@ MonoBehaviour:
   btnName: "<color=orange>\uC815\uC608 \uBAAC\uC2A4\uD130</color>"
   btnDescription: 
   loadSceneName: BattleScene
+  styleidx: 1
   resultIcon: {fileID: -1179532509, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
   resultName: "\uC720\uBB3C \uD68D\uB4DD \uAC00\uB2A5"
   stageName: "<color=orange>\uC815\uC608 \uBAAC\uC2A4\uD130 \uC2A4\uD14C\uC774\uC9C0</color>"
