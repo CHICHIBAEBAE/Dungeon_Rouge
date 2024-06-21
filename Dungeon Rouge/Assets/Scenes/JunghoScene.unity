@@ -182,10 +182,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_FontSize: 60
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Event Name
+  m_Text: "\uAE38\uC5D0\uC11C \uB9CC\uB09C \uBCF4\uBB3C\uC0C1\uC790"
 --- !u!222 &5939982
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4388,15 +4388,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "_1. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_2.
+  m_Text: "\uAE38\uC744\uAC00\uB2E4 \uC0C1\uC790\uBC1C\uACAC\uD588\uB2E4 \uBB50\uC2DC\uAE30\n\uC5F4\uC5B4\uBCFC\uAE4C?
+    \uC774\uBCA4\uD2B8 \uBC1C\uC0DD\n\n_1. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_2.
     \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_3. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774
     \uC801\uD790\uC7A5\uC18C\uB2E4_\n_4. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_5.
     \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_6. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774
     \uC801\uD790\uC7A5\uC18C\uB2E4_\n_7. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_8.
     \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_9. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774
-    \uC801\uD790\uC7A5\uC18C\uB2E4_\n_10. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_11.
-    \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n_12. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774
-    \uC801\uD790\uC7A5\uC18C\uB2E4_"
+    \uC801\uD790\uC7A5\uC18C\uB2E4_\n_10. \uC774\uBCA4\uD2B8\uB0B4\uC6A9\uC774 \uC801\uD790\uC7A5\uC18C\uB2E4_\n\n"
 --- !u!222 &1587333403
 CanvasRenderer:
   m_ObjectHideFlags: 0
