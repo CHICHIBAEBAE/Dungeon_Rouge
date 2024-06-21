@@ -12,6 +12,7 @@ public class CheckBtn : MonoBehaviour
     public void OnCheckBtn()
     {
         stamp.SetActive(true);
+        //DataManager.instance.styleIdx = btnData.styleidx;
 
         if (!string.IsNullOrEmpty(sceneName))
         {
@@ -22,6 +23,5 @@ public class CheckBtn : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(sceneName);
-        DataManager.instance.styleIdx = btnData.styleidx;
     }
 }
