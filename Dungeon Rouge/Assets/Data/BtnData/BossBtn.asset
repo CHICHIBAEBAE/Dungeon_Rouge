@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
   m_Name: BossBtn
   m_EditorClassIdentifier: 
-  btnIcon: {fileID: 1300743815, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  btnIcon: {fileID: -1644451642, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
   btnName: "<color=red>\uBCF4 \uC2A4</color>"
   btnDescription: 
   resultIcon: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
   resultName: "\uC77C\uC815\uB7C9\uC758 \uAE08\uD654"
-  resultDescription: 
+  stageName: 
+  stageDescription: 
