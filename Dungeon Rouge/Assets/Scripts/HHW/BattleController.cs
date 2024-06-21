@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class BattleController : MonoBehaviour
 {
+    [SerializeField] private CharacterStatHandler characterStatHandler;
+
     public Text battleLog;
     public Button attackButton;
     public Slider playerHPBar;
@@ -16,7 +18,7 @@ public class BattleController : MonoBehaviour
     private bool playerActionCompleted = false;
 
     private int playerHealth = 100;
-    private int enemyHealth = 100;
+    private float enemyHealth = 100f;
 
     void Start()
     {
@@ -69,7 +71,7 @@ public class BattleController : MonoBehaviour
     {
         if (isPlayerTurn && !playerActionCompleted)
         {
-            int damage = Random.Range(10, 20);
+            float damage = characterStatHandler.CurrentStat.statData.Atk;
             enemyHealth -= damage;
             Debug.Log($"Player attacked the enemy for {damage} damage. Enemy health: {enemyHealth}");
             string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyHealth}";

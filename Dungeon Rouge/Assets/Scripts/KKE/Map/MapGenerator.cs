@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,11 +11,17 @@ public class MapGenerator : MonoBehaviour
     public Transform pointSpot;
 
     private void Start()
-    {
-        Debug.Log($"{DataManager.instance.MapDataList.Count}");
-        
+    {   
         if (DataManager.instance.MapDataList.Count > 0)
         {
+            if (pointSpot != null)
+            {
+                foreach (Transform child in pointSpot.transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
+            
             LoadMap();
         }
         else

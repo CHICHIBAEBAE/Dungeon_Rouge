@@ -45,6 +45,7 @@ public class BtnController : MonoBehaviour
         if (checkBtn != null)
         {
             checkBtn.sceneName = btnData.loadSceneName;
+            checkBtn.btnData = btnData;
         }
     }   
 }
