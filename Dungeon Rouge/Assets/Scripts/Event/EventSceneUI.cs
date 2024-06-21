@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +28,11 @@ public class EventSceneUI : MonoBehaviour
     }    
     public void OnEventExit()
     {
+        StartCoroutine(EventExit());
+    }
+    IEnumerator EventExit()
+    {
+        yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(1);
         DataManager.instance.styleIdx=0;
     }
