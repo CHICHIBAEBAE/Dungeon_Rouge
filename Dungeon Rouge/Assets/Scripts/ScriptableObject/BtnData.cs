@@ -10,6 +10,8 @@ public class BtnData : ScriptableObject
     public Sprite btnIcon;
     public string btnName;
     public string btnDescription;
+    public string loadSceneName;
+    public int styleidx;
 
     [Header("Result Info")]
     public Sprite resultIcon;
@@ -18,4 +20,8 @@ public class BtnData : ScriptableObject
     [Header("Stage Info")]
     public string stageName;
     public string stageDescription;
+
+    [Header("Appearance probability")]
+    public GameObject prefab;
+    public float probability;
 }

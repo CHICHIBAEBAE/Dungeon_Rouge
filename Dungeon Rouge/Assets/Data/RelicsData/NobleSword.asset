@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
   m_Name: NobleSword
   m_EditorClassIdentifier: 
-  Lv: 10
-  Atk: 10
-  MaxHealth: 10
+
+  Lv: 0
+  Atk: 0
+  MaxHealth: 0
+  ItemImg: {fileID: 21300000, guid: d7aac9379952f664b97d871c37ca555a, type: 3}
   ItemName: "\uADC0\uC871\uAC80"
   ItemInfo: "\uADC0\uC871\uAC80"
-  ItemGold: 200
+  ItemGold: 555
+

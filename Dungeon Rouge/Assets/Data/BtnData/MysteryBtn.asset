@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
   m_Name: MysteryBtn
   m_EditorClassIdentifier: 
+  btnIcon: {fileID: 0}
   btnName: MysteryBtn
-  children:
-  - {fileID: 11400000, guid: 5d022ce7e372ee84cb877766d88d2fac, type: 2}
-  - {fileID: 11400000, guid: 4db6141551a41cd4894c7ff1c86f7b02, type: 2}
-  - {fileID: 11400000, guid: b38fab7248ef33d439dfbacb5c90e811, type: 2}
-  btnPosition: {x: 0, y: 0}
+  btnDescription: 
+  loadSceneName: JunghoScene
+  styleidx: 4
+  resultIcon: {fileID: 0}
+  resultName: 
+  stageName: 
+  stageDescription: 
+  prefab: {fileID: 1840556331488201152, guid: 98cde0565f93196458b752e5861c385d, type: 3}
+  probability: 0.2
