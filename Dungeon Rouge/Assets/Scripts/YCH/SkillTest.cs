@@ -20,10 +20,7 @@ public class SkillTest : MonoBehaviour
             "파워 스트라이크",
             statHandler.CurrentStat.statData.Atk * 1.2f,
             enemy => enemy.TakeDamage(statHandler.CurrentStat.statData.Atk * 1.2f));
-        
-            
 
         powerStrike.Execute(enemy);
-        Debug.Log("빠워스뜨라이크");
     }
 }
