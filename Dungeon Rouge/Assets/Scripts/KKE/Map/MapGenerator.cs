@@ -11,9 +11,9 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log($"{MapManager.instance.MapDataList.Count}");
+        Debug.Log($"{DataManager.instance.MapDataList.Count}");
         
-        if (MapManager.instance.MapDataList.Count > 0)
+        if (DataManager.instance.MapDataList.Count > 0)
         {
             LoadMap();
         }
@@ -41,14 +41,14 @@ public class MapGenerator : MonoBehaviour
                     prefabName = selectedPrefab.name
                 };
 
-                MapManager.instance.MapDataList.Add(mapData);
+                DataManager.instance.MapDataList.Add(mapData);
             }
         }
     }
 
     private void LoadMap()
     {
-        foreach (MapData mapData in MapManager.instance.MapDataList)
+        foreach (MapData mapData in DataManager.instance.MapDataList)
         {
             BtnData btnData = prefabDataList.Find(data => data.prefab.name == mapData.prefabName);
 
