@@ -1,14 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    public Slider audioSlider;
+    public AudioMixer audioMixer;     
+    public Slider effectSlider;
     public static AudioManager instance;
     public Text onOffTxt;
-    bool onOff=true;
+    AudioSource EffectSource;
+    
+    public List<AudioClip> clipList=new List<AudioClip>();
+   
     private void Awake()
     {
         if(instance == null)
@@ -19,31 +23,36 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }        
+        }
+        EffectSource=GetComponent<AudioSource>();
     }
 
-    public void AudioControl()
+    public void ToggleVolume()
     {
-        float sound = audioSlider.value;        
+        if(AudioListener.volume==0)
+        {
+            AudioListener.volume= 1;
+            onOffTxt.text="ON";
+        }
+        else
+        {
+            AudioListener.volume= 0;
+            onOffTxt.text="Off";
+        }
+    }
+    
+    public void EffectAudioControl()
+    {
+        float sound = effectSlider.value;
 
         if (sound == -40f)
-            audioMixer.SetFloat("BGM", -80f);
+            audioMixer.SetFloat("SFX", -80f);
         else 
-            audioMixer.SetFloat("BGM", sound);
+            audioMixer.SetFloat("SFX", sound);
     }
 
-    public void OnAudioTogle()
-    {  
-        onOff=!onOff;        
-        if(onOff)
-        {   
-            onOffTxt.text="Off";
-            audioMixer.SetFloat("BGM", 0f);
-        }        
-        else
-        {   
-            onOffTxt.text="On";
-            audioMixer.SetFloat("BGM", 1f);
-        }
-    }    
+    public void OnSoundBtn(int clipNum)
+    {        
+        EffectSource.PlayOneShot(clipList[clipNum]);
+    }
 }
