@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour
@@ -15,6 +16,7 @@ public class MapGenerator : MonoBehaviour
         if (DataManager.instance.MapDataList.Count > 0)
         {
             LoadMap();
+            ActivateBtn(DataManager.instance.btnCount);
         }
         else
         {
@@ -63,7 +65,33 @@ public class MapGenerator : MonoBehaviour
                         break;
                     }
                 }
-                
+
+            }
+        }
+    }
+
+    //TODO :: 버튼 컨트롤러를 찾지 못하는 중
+    //TODO :: 자식의 자식 오브젝트의 버튼 컨트롤러를 찾아야 하므로 수정 필요
+    private void ActivateBtn(int btnCount)
+    {
+        int numToActivate = btnCount * 3 + 1;
+        int activatedCount = 1;
+
+        foreach (Transform child in pointSpot.transform)
+        {
+            if (activatedCount < numToActivate)
+            {
+                BtnController btnController = child.GetComponentInChildren<BtnController>();
+
+                if (btnController != null)
+                {
+                    child.gameObject.GetComponent<Button>().interactable = true;
+                    activatedCount++;
+                }
+            }
+            else
+            {
+                child.gameObject.GetComponent<Button>().interactable= false;
             }
         }
     }
