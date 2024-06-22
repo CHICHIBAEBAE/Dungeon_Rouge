@@ -14,14 +14,6 @@ public class MapGenerator : MonoBehaviour
     {   
         if (DataManager.instance.MapDataList.Count > 0)
         {
-            if (pointSpot != null)
-            {
-                foreach (Transform child in pointSpot.transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
-            }
-            
             LoadMap();
         }
         else
@@ -55,13 +47,23 @@ public class MapGenerator : MonoBehaviour
 
     private void LoadMap()
     {
+        Transform[] generatorSpots = pointSpot.GetComponentsInChildren<Transform>();
+
         foreach (MapData mapData in DataManager.instance.MapDataList)
         {
             BtnData btnData = prefabDataList.Find(data => data.prefab.name == mapData.prefabName);
 
             if (btnData != null)
             {
-                Instantiate(btnData.prefab, mapData.position, mapData.rotation, pointSpot);
+                foreach (Transform generatorSpot in generatorSpots)
+                {
+                    if (generatorSpot != pointSpot && generatorSpot.childCount == 0)
+                    {
+                        Instantiate(btnData.prefab, generatorSpot.position, generatorSpot.rotation, generatorSpot);
+                        break;
+                    }
+                }
+                
             }
         }
     }
