@@ -14,10 +14,12 @@ public class ShopUI : MonoBehaviour
     public CharacterStat ItemStats; 
     public GameObject player; 
     CharacterStatHandler PlayerModifiders;   
+
+    bool isPay;
     
     void Start() 
     {   
-        OnRerole();
+        OnRerole(0);
         PlayerModifiders = player.GetComponent<CharacterStatHandler>();
     }
     void ShowDisplay()
@@ -36,24 +38,39 @@ public class ShopUI : MonoBehaviour
         ItemImg[4].sprite=ItemList[r[btnNum]].ItemImg;
 
         ItemStats.statData=ItemList[r[btnNum]];
-    }    
+    }   
 
     public void OnHeal()
-    {
-
+    {        
+        // Payment(100);
+        // if(isPay)
+        // {       
+                 Debug.Log("회복");        
+        //       PlayerModifiders.statData.CurHealth=Player.statData.MaxHealth;
+        //       isPay=!isPay;
+        // }
     }
 
     public void OnBuyItem()
-    {
-        Debug.Log("구매");
-        //Player.statData.gold-=ItemList[r[btnNum]].ItemGold;
-        PlayerModifiders.AddStatModifier(ItemStats);
+    {        
+        // Payment(ItemStats.statData.ItemGold);
+        // if(isPay)
+        // {
+             Debug.Log("구매");
+             PlayerModifiders.AddStatModifier(ItemStats);
+        //     isPay=!isPay;
+        // }
     }
 
-    public void OnRerole()
-    {         
-        RandomValue(r,0,ItemList.Count);        
-        ShowDisplay();        
+    public void OnRerole(int gold)
+    {   
+        Payment(gold);
+        if(isPay)
+        {
+        RandomValue(r,0,ItemList.Count);
+        ShowDisplay();
+        isPay=!isPay;
+        }
     }
 
     void RandomValue(int[] _r,int min,int max)
@@ -67,5 +84,19 @@ public class ShopUI : MonoBehaviour
             _r[i]=numList[ran]; //use numList(3)
             numList.RemoveAt(ran);//Remove umList(3) ==> numList(0,1,2,4)
         }
+    }
+
+    bool Payment(int _gold)
+    {
+        //if(Player.statData.gold>=_gold)
+        //{
+        //     PlayerModifiders.baseStats.statData.gold-=_gold;
+             return isPay=true;
+        //}               
+        //else 
+        //{
+        //     Debug.Log("님돈없");
+        //     return isPay=false;
+        //}
     }
 }

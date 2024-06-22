@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff43cc9ab586811419577d806bf62cae, type: 3}
   m_Name: EventData4
   m_EditorClassIdentifier: 
-  Lv: 0
-  Atk: 0
-  MaxHealth: 0
   EventName: "\uAE30\uC2B5\uC744 \uB2F9\uD588\uB2E4"
   EventInfo: "\uAE38\uC744 \uD5A5\uD558\uB294\uC911 \uAE30\uC2B5\uC744 \uBC1B\uC558\uC2B5\uB2C8\uB2E4.
     \uD53C\uD560\uAE38\uC774 \uC5C6\uC5B4\uBCF4\uC785\uB2C8\uB2E4. "
   EventChoice1: "\uC804\uD22C\uB3CC\uC785"
-  EventOnChoice2: 0
   EventChoice2: 
+  eventModifiers1:
+  - eventType: 4
+    percent: 1
+    intNum: 1
+  EventOnChoice2: 0
+  eventModifiers2: []
   EventOnChoice3: 0
-  percent: 1
-  ItemGold: 0
-  styleidx: 1
