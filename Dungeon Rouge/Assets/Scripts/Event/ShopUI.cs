@@ -9,20 +9,23 @@ public class ShopUI : MonoBehaviour
     public Image[] ItemImg=new Image[5];
     public Text ItemName;
     public Text ItemInfo; 
-    public List<ItemData> ItemList;    
-    int[] r= new int[4];      
+    public List<ItemData> ItemList;
+    int[] r= new int[4]; 
+    public CharacterStat ItemStats; 
+    public GameObject player; 
+    CharacterStatHandler PlayerModifiders;   
     
     void Start() 
     {   
         OnRerole();
+        PlayerModifiders = player.GetComponent<CharacterStatHandler>();
     }
     void ShowDisplay()
     {        
         for (int i = 0; i < 4;i++)
         {
             ItemImg[i].sprite=ItemList[r[i]].ItemImg;
-            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();
-            //Debug.Log(i+" : "+r[i]);
+            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();            
         }
     }
     public void OnSelect(int btnNum)
@@ -31,18 +34,26 @@ public class ShopUI : MonoBehaviour
         ItemInfo.text=ItemList[r[btnNum]].ItemInfo.ToString();
         ItemGold[4].text=ItemList[r[btnNum]].ItemGold.ToString();
         ItemImg[4].sprite=ItemList[r[btnNum]].ItemImg;
-    }
+
+        ItemStats.statData=ItemList[r[btnNum]];
+    }    
 
     public void OnHeal()
     {
 
     }
 
+    public void OnBuyItem()
+    {
+        Debug.Log("구매");
+        //Player.statData.gold-=ItemList[r[btnNum]].ItemGold;
+        PlayerModifiders.AddStatModifier(ItemStats);
+    }
+
     public void OnRerole()
     {         
         RandomValue(r,0,ItemList.Count);        
-        ShowDisplay();
-        //Debug.Log($"{r[0]}, {r[1]}, {r[2]}, {r[3]}");
+        ShowDisplay();        
     }
 
     void RandomValue(int[] _r,int min,int max)
