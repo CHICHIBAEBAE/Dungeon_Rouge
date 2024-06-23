@@ -1533,6 +1533,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b38fab7248ef33d439dfbacb5c90e811, type: 2}
   - {fileID: 11400000, guid: 3fbada429a9f5c84ca0e6d09a00181a8, type: 2}
   pointSpot: {fileID: 5529403176438913470}
+  startBtn: {fileID: 5184559813291377345}
+  endBtn: {fileID: 3524350636666773302}
 --- !u!4 &1365114552
 Transform:
   m_ObjectHideFlags: 0
@@ -3468,7 +3470,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.8627451}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

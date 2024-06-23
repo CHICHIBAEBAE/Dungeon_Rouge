@@ -10,6 +10,8 @@ public class MapGenerator : MonoBehaviour
 {
     public List<BtnData> prefabDataList;
     public Transform pointSpot;
+    public Button startBtn;
+    public Button endBtn;
 
     private void Start()
     {   
@@ -75,23 +77,38 @@ public class MapGenerator : MonoBehaviour
     private void ActivateBtn(int btnCount)
     {
         int numToActivate = btnCount * 3 + 1;
+        int numToDeactivate = 3 * (btnCount - 1);
         int activatedCount = 1;
 
         foreach (Transform child in pointSpot.transform)
         {
-            if (activatedCount < numToActivate)
-            {
-                BtnController btnController = child.GetComponentInChildren<BtnController>();
+            BtnController btnController = child.GetComponentInChildren<BtnController>();
 
-                if (btnController != null)
+            if (btnController != null)
+            {
+                Button button = btnController.GetComponent<Button>();
+
+                if (button != null)
                 {
-                    child.gameObject.GetComponent<Button>().interactable = true;
+                    if (numToDeactivate < activatedCount && activatedCount < numToActivate)
+                    {
+                        button.interactable = true;
+                        startBtn.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = false;
+                    }
+
+                    if (btnCount == 11)
+                    {
+                        button.interactable = false;
+                        startBtn.interactable = false;
+                        endBtn.interactable = true;
+                    }
+
                     activatedCount++;
                 }
-            }
-            else
-            {
-                child.gameObject.GetComponent<Button>().interactable= false;
             }
         }
     }
