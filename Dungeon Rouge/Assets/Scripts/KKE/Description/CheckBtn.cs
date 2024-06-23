@@ -11,6 +11,9 @@ public class CheckBtn : MonoBehaviour
 
     public void OnCheckBtn()
     {
+        DataManager.instance.btnCount++;
+        int btnCount = DataManager.instance.btnCount;
+        
         stamp.SetActive(true);
         DataManager.instance.styleIdx = btnData.styleidx;
 
