@@ -72,8 +72,6 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    //TODO :: 버튼 컨트롤러를 찾지 못하는 중
-    //TODO :: 자식의 자식 오브젝트의 버튼 컨트롤러를 찾아야 하므로 수정 필요
     private void ActivateBtn(int btnCount)
     {
         int numToActivate = btnCount * 3 + 1;
