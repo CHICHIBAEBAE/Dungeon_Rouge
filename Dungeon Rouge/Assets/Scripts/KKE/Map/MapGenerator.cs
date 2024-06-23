@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D.Aseprite;
+using Unity.Loading;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,8 +13,17 @@ public class MapGenerator : MonoBehaviour
     public Button startBtn;
     public Button endBtn;
 
+    public GameObject loadScene;
+    public Animator anim;
+    public string animName;
+
     private void Start()
     {   
+        loadScene.SetActive(true);
+        anim.Play(animName);
+
+        StartCoroutine(WaitForAnimation(anim, animName));
+        
         if (DataManager.instance.MapDataList.Count > 0)
         {
             LoadMap();
@@ -24,6 +33,16 @@ public class MapGenerator : MonoBehaviour
         {
             GenerateMap();
         }
+    }
+
+    public IEnumerator WaitForAnimation(Animator anim, string animName)
+    {
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        float animationDuration = stateInfo.length;
+
+        yield return new WaitForSeconds(animationDuration);
+
+        loadScene.SetActive(false);
     }
 
     private void GenerateMap()
