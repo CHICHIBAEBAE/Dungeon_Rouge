@@ -14,12 +14,5 @@ public class PlayStateUI : MonoBehaviour
     {
         player = FindObjectOfType<Player>().gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
-        UpdateUI();
-    }
-
-    void UpdateUI()
-    {
-        playerLevelText.text = "Lv : " + characterStatHandler.CurrentStat.statData.Lv;
-        // 추후 EXP 추가하면 작성
     }
 }

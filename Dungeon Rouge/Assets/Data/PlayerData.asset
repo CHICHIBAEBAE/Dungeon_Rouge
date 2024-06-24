@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c3d4054abd35c42b5cb8e6313ca2e5, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  Lv: 1
   Atk: 10
+  CurHealth: 100
   MaxHealth: 100
+  PlayerHaveGold: 300

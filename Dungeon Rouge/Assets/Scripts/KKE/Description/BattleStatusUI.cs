@@ -16,7 +16,6 @@ public class BattleStatusUI : MonoBehaviour
 
     private void UpdateUI()
     {
-        playerLevelTxt.text = $" 레벨  : {CharacterStatHandler.CurrentStat.statData.Lv}";
         playerHpTxt.text = $" 체력  : {CharacterStatHandler.CurrentStat.statData.MaxHealth} / 100";
         playerAtkTxt.text = $"공격력 : {CharacterStatHandler.CurrentStat.statData.Atk}";
     }

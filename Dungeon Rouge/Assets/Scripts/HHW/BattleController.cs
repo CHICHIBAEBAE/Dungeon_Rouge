@@ -20,6 +20,7 @@ public class BattleController : MonoBehaviour
     public Animator playerAnimator;
     public Animator enemyAnimator;
     public float typingSpeed = 0.01f;  // 배틀 로그 텍스트가 출력되는 속도
+    private int curHP;
 
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
     private bool playerActionCompleted = false; // 플레이어의 행동이 완료되었는지 여부를 나타내는 플래그
@@ -35,8 +36,9 @@ public class BattleController : MonoBehaviour
         playerAnimator = player.GetComponentInChildren<Animator>();
         enemyAnimator = enemy.GetComponentInChildren<Animator>();
         attackButton.onClick.AddListener(OnPlayerAttack); // 공격 버튼에 클릭 이벤트를 추가 -> 없앴더니 배틀 시스템 안돌아감
+        curHP = characterStatHandler.CurrentStat.statData.CurHealth;
         playerHPBar.maxValue = characterStatHandler.CurrentStat.statData.MaxHealth; // 플레이어의 최대 체력을 슬라이더의 최대 값으로 설정
-        playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth; // 슬라이더를 플레이어의 현재 체력 값으로 초기화
+        playerHPBar.value = characterStatHandler.CurrentStat.statData.CurHealth; // 슬라이더를 플레이어의 현재 체력 값으로 초기화
         enemyHPBar.maxValue = enemyStatHandler.CurrentStat.statData.MaxHealth; // 적의 최대 체력을 슬라이더의 최대 값으로 설정
         enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // 슬라이더를 적의 현재 체력 값으로 초기화
         StartCoroutine(Battle()); // 배틀 코루틴 시작
@@ -45,7 +47,7 @@ public class BattleController : MonoBehaviour
     IEnumerator Battle()
     {
         // 플레이어와 적의 체력이 모두 0보다 클 때까지 반복
-        while (characterStatHandler.CurrentStat.statData.MaxHealth > 0 && enemyStatHandler.CurrentStat.statData.MaxHealth > 0)
+        while (curHP > 0 && enemyStatHandler.CurrentStat.statData.MaxHealth > 0)
         {
             if (isPlayerTurn) // 플레이어의 턴이면
             {
@@ -68,7 +70,7 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(3.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
         }
 
-        if (characterStatHandler.CurrentStat.statData.MaxHealth <= 0) // 플레이어가 패배한 경우
+        if (curHP <= 0) // 플레이어가 패배한 경우
         {
             Debug.Log("Player is defeated");
             yield return StartCoroutine(TypeText("Player is defeated")); // "Player is defeated" 텍스트 출력
@@ -82,6 +84,18 @@ public class BattleController : MonoBehaviour
 
             Debug.Log("Enemy is defeated");
             yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" 텍스트 출력
+        }
+    }
+
+    void Reward()
+    {
+        if(DataManager.instance.styleIdx == 0)
+        {
+            characterStatHandler.CurrentStat.statData.PlayerHaveGold += 100;
+        }
+        else if (DataManager.instance.styleIdx == 1)
+        {
+            characterStatHandler.CurrentStat.statData.PlayerHaveGold += 200;
         }
     }
 
@@ -105,14 +119,14 @@ public class BattleController : MonoBehaviour
     void EnemyAttack()
     {
         float damage = enemyStatHandler.CurrentStat.statData.Atk; // 적의 공격력을 랜덤으로 설정 (100~200 사이 : 게임 오버씬 테스트확인을 위해 플레이어 체력보다 높게 설정함)
-        characterStatHandler.CurrentStat.statData.MaxHealth -= (int)damage; // 플레이어의 체력에서 적의 공격력만큼 뺌
+        curHP -= (int)damage; // 플레이어의 체력에서 적의 공격력만큼 뺌
         Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}");
-        string message = $"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}"; // 배틀 로그에 출력할 메시지 생성
+        string message = $"Enemy attacked the player for {damage} damage. Player health: {curHP}"; // 배틀 로그에 출력할 메시지 생성
         StartCoroutine(TypeText(message)); // 메시지를 타이핑 속도로 출력
         enemyAnimator.SetTrigger("Attack");
         playerAnimator.SetTrigger("Hurt");
 
-        playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth; // 플레이어의 체력 슬라이더를 업데이트
+        playerHPBar.value = curHP; // 플레이어의 체력 슬라이더를 업데이트
     }
 
     IEnumerator TypeText(string message)

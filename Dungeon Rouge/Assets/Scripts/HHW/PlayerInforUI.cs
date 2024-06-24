@@ -21,7 +21,6 @@ public class PlayerInforUI : MonoBehaviour
 
     void UpdateUI()
     {
-        playerLevelText.text = "레벨 : " + _characterStatHandler.CurrentStat.statData.Lv;
         playerAttackText.text = "공격력 : " + _characterStatHandler.CurrentStat.statData.Atk;
         playerHealthText.text = "체력 : " + _characterStatHandler.CurrentStat.statData.MaxHealth;
     }
