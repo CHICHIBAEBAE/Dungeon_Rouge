@@ -6,8 +6,8 @@ using UnityEngine;
 public class StatData : ScriptableObject
 {
     [Header("Stat")]
-    public int Lv;
     public float Atk;
+    public int CurHealth;
     public int MaxHealth;
     public int PlayerHaveGold;
 }

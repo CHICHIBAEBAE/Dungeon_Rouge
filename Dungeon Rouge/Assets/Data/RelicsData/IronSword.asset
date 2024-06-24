@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
-  m_Name: TestSword
+  m_Name: IronSword
   m_EditorClassIdentifier: 
-  Lv: 0
   Atk: 10
-  MaxHealth: 20
-  ItemImg: {fileID: 21300000, guid: 90ccd2485bc65b142881beead393f2f9, type: 3}
-  ItemName: "\uD14C\uC2A4\uD2B8\uAC80"
-  ItemInfo: "\uB79C\uB364+\uB9AC\uB864\uD14C\uC2A4\uD2B8\uC6A9"
-  ItemGold: 150
+  CurHealth: 0
+  MaxHealth: 0
+  PlayerHaveGold: 200
+  ItemImg: {fileID: 21300000, guid: 6eca0b3134505e84ea917331e611ceec, type: 3}
+  ItemName: "\uAC15\uCCA0\uAC80"
+  ItemInfo: "\uAC15\uCCA0\uB85C \uB9CC\uB4E0\uAC80\uC774\uB2E4 \uACF5\uACA9\uB825\uC744
+    +10 \uD55C\uB2E4"
+  ItemGold: 200

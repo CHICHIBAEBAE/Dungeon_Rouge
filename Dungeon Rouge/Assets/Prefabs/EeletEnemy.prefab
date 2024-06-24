@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2598363337477015500}
+  - component: {fileID: 7049418012636136563}
+  - component: {fileID: 6843747843822461230}
   m_Layer: 0
   m_Name: EeletEnemy
   m_TagString: Untagged
@@ -32,6 +34,34 @@ Transform:
   - {fileID: 4761886491044034593}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7049418012636136563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514190012621769316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa76ce7c402df1c49b64ff9e47a68ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStats:
+    statsChangeType: 2
+    statData: {fileID: 11400000, guid: 9ba1675954b004d42b3a0353365f4517, type: 2}
+  statsModifiers: []
+--- !u!114 &6843747843822461230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514190012621769316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a388d382082e48d4d939eb5858ba35bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4748114325815349856
 GameObject:
   m_ObjectHideFlags: 0
