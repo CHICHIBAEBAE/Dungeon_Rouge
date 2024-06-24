@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,9 +25,6 @@ public class BattleController : MonoBehaviour
     private bool playerActionCompleted = false; // 플레이어의 행동이 완료되었는지 여부를 나타내는 플래그
 
     [SerializeField] private GameObject gameOverUI; // 게임 오버 시 표시할 UI
-
-
-    private float enemyHealth = 100f; // 적의 체력, 임의로 100으로 설정
 
     void Start()
     {
@@ -69,7 +65,7 @@ public class BattleController : MonoBehaviour
                 Debug.Log("Enemy's Turn completed"); 
                 isPlayerTurn = true; // 플레이어의 턴으로 전환
             } 
-            yield return new WaitForSeconds(4.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
+            yield return new WaitForSeconds(3.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
         }
 
         if (characterStatHandler.CurrentStat.statData.MaxHealth <= 0) // 플레이어가 패배한 경우
@@ -82,6 +78,8 @@ public class BattleController : MonoBehaviour
         }
         else if (enemyStatHandler.CurrentStat.statData.MaxHealth <= 0)
         {
+            enemyAnimator.SetTrigger("Death");
+
             Debug.Log("Enemy is defeated");
             yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" 텍스트 출력
         }

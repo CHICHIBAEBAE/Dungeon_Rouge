@@ -85,5 +85,6 @@ public class CharacterStatHandler : MonoBehaviour
         currentStat.Atk = Mathf.Max(operation(currentStat.Atk, newStat.Atk), MinAttackDmg);
         currentStat.MaxHealth = Mathf.Max((int)operation(currentStat.MaxHealth, newStat.MaxHealth), MinMaxHealth);
         currentStat.Lv = Mathf.Max((int)operation(currentStat.Lv, newStat.Lv), MinLv);
+        currentStat.PlayerHaveGold = Mathf.Max((int)operation(currentStat.PlayerHaveGold, newStat.PlayerHaveGold));
     }
 }
