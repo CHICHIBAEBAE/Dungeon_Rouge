@@ -6,6 +6,7 @@ public class StartSceneUI : MonoBehaviour
     public GameObject OptionPanel;
     public void OnStart()
     {
+        DataManager.instance.btnCount = 0;
         SceneManager.LoadScene(1);
     }
 
