@@ -3,26 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class MapGenerator : MonoBehaviour
 {
     public List<BtnData> prefabDataList;
     public Transform pointSpot;
+    public Button startBtn;
+    public Button endBtn;
 
     private void Start()
     {   
         if (DataManager.instance.MapDataList.Count > 0)
         {
-            if (pointSpot != null)
-            {
-                foreach (Transform child in pointSpot.transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
-            }
-            
             LoadMap();
+            ActivateBtn(DataManager.instance.btnCount);
         }
         else
         {
@@ -55,13 +51,62 @@ public class MapGenerator : MonoBehaviour
 
     private void LoadMap()
     {
+        Transform[] generatorSpots = pointSpot.GetComponentsInChildren<Transform>();
+
         foreach (MapData mapData in DataManager.instance.MapDataList)
         {
             BtnData btnData = prefabDataList.Find(data => data.prefab.name == mapData.prefabName);
 
             if (btnData != null)
             {
-                Instantiate(btnData.prefab, mapData.position, mapData.rotation, pointSpot);
+                foreach (Transform generatorSpot in generatorSpots)
+                {
+                    if (generatorSpot != pointSpot && generatorSpot.childCount == 0)
+                    {
+                        Instantiate(btnData.prefab, generatorSpot.position, generatorSpot.rotation, generatorSpot);
+                        break;
+                    }
+                }
+
+            }
+        }
+    }
+
+    private void ActivateBtn(int btnCount)
+    {
+        int numToActivate = btnCount * 3 + 1;
+        int numToDeactivate = 3 * (btnCount - 1);
+        int activatedCount = 1;
+
+        foreach (Transform child in pointSpot.transform)
+        {
+            BtnController btnController = child.GetComponentInChildren<BtnController>();
+
+            if (btnController != null)
+            {
+                Button button = btnController.GetComponent<Button>();
+
+                if (button != null)
+                {
+                    if (numToDeactivate < activatedCount && activatedCount < numToActivate)
+                    {
+                        button.interactable = true;
+                        startBtn.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = false;
+                    }
+
+                    if (btnCount == 11)
+                    {
+                        button.interactable = false;
+                        startBtn.interactable = false;
+                        endBtn.interactable = true;
+                    }
+
+                    activatedCount++;
+                }
             }
         }
     }

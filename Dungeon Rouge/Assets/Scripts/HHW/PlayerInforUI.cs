@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerInforUI : MonoBehaviour
 {
-    public StatData playerData;
+    [SerializeField]private CharacterStatHandler _characterStatHandler;
 
     public Text playerLevelText;
     public Text playerAttackText;
@@ -13,7 +13,7 @@ public class PlayerInforUI : MonoBehaviour
 
     private void Start()
     {
-        if(playerData != null)
+        if(_characterStatHandler != null)
         {
             UpdateUI();
         }
@@ -21,8 +21,8 @@ public class PlayerInforUI : MonoBehaviour
 
     void UpdateUI()
     {
-        playerLevelText.text = "레벨 : " + playerData.Lv;
-        playerAttackText.text = "공격력 : " + playerData.Atk;
-        playerHealthText.text = "체력 : " + playerData.MaxHealth;
+        playerLevelText.text = "레벨 : " + _characterStatHandler.CurrentStat.statData.Lv;
+        playerAttackText.text = "공격력 : " + _characterStatHandler.CurrentStat.statData.Atk;
+        playerHealthText.text = "체력 : " + _characterStatHandler.CurrentStat.statData.MaxHealth;
     }
 }

@@ -1270,6 +1270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIdx: 0
   styleIdx: 0
+  btnCount: 0
 --- !u!1 &1034445801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,6 +1533,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b38fab7248ef33d439dfbacb5c90e811, type: 2}
   - {fileID: 11400000, guid: 3fbada429a9f5c84ca0e6d09a00181a8, type: 2}
   pointSpot: {fileID: 5529403176438913470}
+  startBtn: {fileID: 5184559813291377345}
+  endBtn: {fileID: 3524350636666773302}
 --- !u!4 &1365114552
 Transform:
   m_ObjectHideFlags: 0
@@ -2525,7 +2528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9006608875050155612}
   m_Layer: 5
-  m_Name: GameObject (28)
+  m_Name: Spot10
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2541,7 +2544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5268885731683835445}
   m_Layer: 5
-  m_Name: GameObject (24)
+  m_Name: Spot9
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2557,7 +2560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8104815094696354117}
   m_Layer: 5
-  m_Name: GameObject (56)
+  m_Name: Spot17
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2573,7 +2576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7349437563147060970}
   m_Layer: 5
-  m_Name: GameObject (40)
+  m_Name: Spot13
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2705,7 +2708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1214172568473888485}
   m_Layer: 5
-  m_Name: GameObject (96)
+  m_Name: Spot27
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2758,7 +2761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4217045074943957878}
   m_Layer: 5
-  m_Name: GameObject (60)
+  m_Name: Spot18
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2774,7 +2777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5328713060704885958}
   m_Layer: 5
-  m_Name: GameObject (4)
+  m_Name: Spot4
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2828,7 +2831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3059607268940359236}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Spot1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2882,7 +2885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231935103401381242}
   m_Layer: 5
-  m_Name: GameObject (16)
+  m_Name: Spot7
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2925,7 +2928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6096478925912711741}
   m_Layer: 5
-  m_Name: GameObject (1)
+  m_Name: Spot28
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2975,7 +2978,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.8627451}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2989,7 +2992,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1109757859157947813}
   m_OnClick:
     m_PersistentCalls:
@@ -3016,7 +3019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1617852651931332660}
   m_Layer: 5
-  m_Name: GameObject (52)
+  m_Name: Spot16
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3032,7 +3035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4363514967970903776}
   m_Layer: 5
-  m_Name: GameObject (32)
+  m_Name: Spot11
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3067,7 +3070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6021216391848745139}
   m_Layer: 5
-  m_Name: GameObject (20)
+  m_Name: Spot8
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3119,7 +3122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9005710359390469004}
   m_Layer: 5
-  m_Name: GameObject (68)
+  m_Name: Spot20
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3161,7 +3164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2917289018966126038}
   m_Layer: 5
-  m_Name: GameObject (76)
+  m_Name: Spot22
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3329,7 +3332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620539731261594757}
   m_Layer: 5
-  m_Name: GameObject (80)
+  m_Name: Spot23
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3365,7 +3368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3317985298847294141}
   m_Layer: 5
-  m_Name: GameObject (92)
+  m_Name: Spot26
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3420,7 +3423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8515949334290782297}
   m_Layer: 5
-  m_Name: GameObject (9)
+  m_Name: Spot30
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3436,7 +3439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7620875292583354412}
   m_Layer: 5
-  m_Name: GameObject (8)
+  m_Name: Spot5
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3464,10 +3467,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.8627451}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3527,7 +3530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4344574517684842871}
   m_Layer: 5
-  m_Name: GameObject (2)
+  m_Name: Spot3
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3649,7 +3652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3461313307960246381}
   m_Layer: 5
-  m_Name: GameObject (44)
+  m_Name: Spot14
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3684,7 +3687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5750529360520915684}
   m_Layer: 5
-  m_Name: GameObject (12)
+  m_Name: Spot6
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3835,7 +3838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8873270400559426374}
   m_Layer: 5
-  m_Name: GameObject (48)
+  m_Name: Spot15
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -3910,7 +3913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6742066919177647046}
   m_Layer: 5
-  m_Name: GameObject (64)
+  m_Name: Spot19
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4031,7 +4034,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1783206597525658047}
   m_Layer: 5
-  m_Name: GameObject (36)
+  m_Name: Spot12
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4102,7 +4105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3635730742029586572}
   m_Layer: 5
-  m_Name: GameObject (72)
+  m_Name: Spot21
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4118,7 +4121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7009772675919419464}
   m_Layer: 5
-  m_Name: GameObject (84)
+  m_Name: Spot24
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4134,7 +4137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2532219667735651892}
   m_Layer: 5
-  m_Name: GameObject (3)
+  m_Name: Spot2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4180,7 +4183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3731730725626872977}
   m_Layer: 5
-  m_Name: GameObject (5)
+  m_Name: Spot29
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4332,7 +4335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5535048909532867183}
   m_Layer: 5
-  m_Name: GameObject (88)
+  m_Name: Spot25
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
