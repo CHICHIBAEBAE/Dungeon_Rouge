@@ -40,12 +40,12 @@ public class ShopUI : MonoBehaviour
         ItemStats.statData=ItemList[r[btnNum]];
     }   
 
-    public void OnHeal()
+    public void OnHeal(int gold)
     {        
-        // Payment(100);
+        // Payment(gold);
         // if(isPay)
         // {       
-                 Debug.Log("회복");        
+                 Debug.Log("회복");
         //       PlayerModifiders.statData.CurHealth=Player.statData.MaxHealth;
         //       isPay=!isPay;
         // }
