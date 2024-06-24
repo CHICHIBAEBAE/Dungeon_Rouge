@@ -1,24 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] StatData playerData;
-    public CharacterStatHandler characterStatHandler;
-
-    void Start()
+    static public Player instance;
+    void Awake()
     {
-        characterStatHandler = GetComponent<CharacterStatHandler>();
-    }
-
-    void Update()
-    {
-        
-    }
-
-    public void OnAttack()
-    {
-        Debug.Log($"{characterStatHandler.CurrentStat.statData.Atk}!!!");
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
