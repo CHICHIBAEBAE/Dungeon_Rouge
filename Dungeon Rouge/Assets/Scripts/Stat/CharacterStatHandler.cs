@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CharacterStatHandler : MonoBehaviour
 {
-    [SerializeField] private CharacterStat baseStats;
+    public CharacterStat baseStats;
 
     public CharacterStat CurrentStat { get; private set; } = new();
 
@@ -58,7 +58,7 @@ public class CharacterStatHandler : MonoBehaviour
         }
     }
 
-    private void ApplyStatModifier(CharacterStat modifier)
+    public void ApplyStatModifier(CharacterStat modifier)
     {
         Func<float, float, float> operation = Operation(modifier.statsChangeType);
 
