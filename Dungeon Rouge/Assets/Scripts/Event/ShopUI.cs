@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,7 @@ public class ShopUI : MonoBehaviour
     {   
         OnRerole(0);
         PlayerModifiders = player.GetComponent<CharacterStatHandler>();
-        //curHp=PlayerModifiders.baseStats.statData.curHealth;
+        //curHp=PlayerModifiders.baseStats.statData.CurHealth;
         maxHP=PlayerModifiders.baseStats.statData.MaxHealth;
         curGold=PlayerModifiders.CurrentStat.statData.PlayerHaveGold;
     }
