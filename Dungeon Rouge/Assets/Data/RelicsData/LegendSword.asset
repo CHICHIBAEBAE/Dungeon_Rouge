@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
-  m_Name: NobleSword
+  m_Name: LegendSword
   m_EditorClassIdentifier: 
   Lv: 1
-  Atk: 15
+  Atk: 20
   MaxHealth: 0
-  ItemImg: {fileID: 21300000, guid: d7aac9379952f664b97d871c37ca555a, type: 3}
-  ItemName: "\uADC0\uC871\uAC80"
-  ItemInfo: "\uADC0\uC871\uC758\uAC80 \uACF5\uACA9\uB825\uC744 +15\uD55C\uB2E4"
-  ItemGold: 300
+  ItemImg: {fileID: 21300000, guid: 0027a5e8b703fa345a81a833b17e2f12, type: 3}
+  ItemName: "\uC804\uC124\uC758\uAC80"
+  ItemInfo: "\uC804\uC124\uC758\uAC80\uC774\uB2E4 \uACF5\uACA9\uB825\uC744 +20 \uD55C\uB2E4"
+  ItemGold: 400

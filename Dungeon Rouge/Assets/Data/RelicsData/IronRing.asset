@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
-  m_Name: CursedSword
+  m_Name: IronRing
   m_EditorClassIdentifier: 
   Lv: 1
-  Atk: 10
-  MaxHealth: -10
-  ItemImg: {fileID: 21300000, guid: 47919460aef481f429dde558b8ae5ccd, type: 3}
-  ItemName: "\uC800\uC8FC\uBC1B\uC740\uAC80"
-  ItemInfo: "\uC800\uC8FC\uBC1B\uC740\uAC80\uC774\uB2E4 \uACF5\uACA9\uB82510,\uCD5C\uB300\uCCB4\uB825-10\uC744
-    \uC900\uB2E4"
+  Atk: 0
+  MaxHealth: 20
+  ItemImg: {fileID: 21300000, guid: 2b4f5a853bedb8b49a6834252e70c0d6, type: 3}
+  ItemName: "\uCCA0\uC81C\uBC18\uC9C0"
+  ItemInfo: "\uCC29\uC6A9\uC790\uC758 \uCD5C\uB300\uCCB4\uB825\uC744 +20 \uD55C\uB2E4"
   ItemGold: 200

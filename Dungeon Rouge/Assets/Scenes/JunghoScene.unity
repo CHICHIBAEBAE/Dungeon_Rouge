@@ -2296,7 +2296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &974042350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3045,7 +3045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1189203268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5374,6 +5374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapIdx: 0
   styleIdx: 0
+  btnCount: 0
 --- !u!4 &1986033690
 Transform:
   m_ObjectHideFlags: 0
