@@ -1535,6 +1535,9 @@ MonoBehaviour:
   pointSpot: {fileID: 5529403176438913470}
   startBtn: {fileID: 5184559813291377345}
   endBtn: {fileID: 3524350636666773302}
+  loadScene: {fileID: 2105415265}
+  anim: {fileID: 2105415267}
+  animName: StartScene
 --- !u!4 &1365114552
 Transform:
   m_ObjectHideFlags: 0
