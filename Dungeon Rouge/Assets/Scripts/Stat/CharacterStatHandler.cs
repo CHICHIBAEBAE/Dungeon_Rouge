@@ -12,9 +12,10 @@ public class CharacterStatHandler : MonoBehaviour
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
 
-    private readonly int MinLv = 1;
     private readonly float MinAttackDmg = 1.0f;
     private readonly int MinMaxHealth = 1;
+    private readonly int MinCurHealth = 1;
+    private readonly int MinPlayerHaveGold = 1;
 
     private void Awake()
     {
@@ -83,8 +84,8 @@ public class CharacterStatHandler : MonoBehaviour
         var newStat = modifier.statData;
 
         currentStat.Atk = Mathf.Max(operation(currentStat.Atk, newStat.Atk), MinAttackDmg);
+        currentStat.CurHealth = Mathf.Max((int)operation(currentStat.CurHealth, newStat.CurHealth), MinCurHealth);
         currentStat.MaxHealth = Mathf.Max((int)operation(currentStat.MaxHealth, newStat.MaxHealth), MinMaxHealth);
-        currentStat.Lv = Mathf.Max((int)operation(currentStat.Lv, newStat.Lv), MinLv);
-        currentStat.PlayerHaveGold = Mathf.Max((int)operation(currentStat.PlayerHaveGold, newStat.PlayerHaveGold));
+        currentStat.PlayerHaveGold = Mathf.Max((int)operation(currentStat.PlayerHaveGold, newStat.PlayerHaveGold), MinPlayerHaveGold);
     }
 }
