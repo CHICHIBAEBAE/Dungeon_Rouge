@@ -121,6 +121,7 @@ public class BattleController : MonoBehaviour
 
     private void GameOver()
     {
+        playerAnimator.SetTrigger("Death");
         gameOverUI.SetActive(true); // 게임 오버 UI를 활성화
     }
 
