@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,9 @@ using UnityEngine.UI;
 public class BattleController : MonoBehaviour
 {
     [SerializeField] private CharacterStatHandler characterStatHandler; // 캐릭터 스탯을 관리하는 핸들러
-    
+
+    public List<CharacterStat> statsModifiers = new List<CharacterStat>();
+
     public GameObject player;
     public Text battleLog; //  플레이어와 적의 턴과 배틀 로그를 표시하는 텍스트 UI
     public Button attackButton; // 플레이어가 공격할 때 누르는 버튼
@@ -15,7 +18,7 @@ public class BattleController : MonoBehaviour
     public Slider enemyHPBar;// 적의 체력을 표시하는 UI 슬라이더
     public Animator playerAnimator;
     public Animator enemyAnimator;
-    public float typingSpeed = 0.05f;  // 배틀 로그 텍스트가 출력되는 속도
+    public float typingSpeed = 0.02f;  // 배틀 로그 텍스트가 출력되는 속도
 
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
     private bool playerActionCompleted = false; // 플레이어의 행동이 완료되었는지 여부를 나타내는 플래그
@@ -68,6 +71,8 @@ public class BattleController : MonoBehaviour
         {
             Debug.Log("Player is defeated");
             yield return StartCoroutine(TypeText("Player is defeated")); // "Player is defeated" 텍스트 출력
+            playerAnimator.SetTrigger("Death");
+            yield return new WaitForSeconds(1f);
             GameOver(); // 게임 오버 함수 호출
         }
         else if (enemyHealth <= 0)
@@ -124,12 +129,20 @@ public class BattleController : MonoBehaviour
 
     private void GameOver()
     {
-        playerAnimator.SetTrigger("Death");
+        
         gameOverUI.SetActive(true); // 게임 오버 UI를 활성화
     }
 
     public void RestartGame()
     {
+        playerAnimator.SetTrigger("Retry");
         SceneManager.LoadScene("StartScene"); //"StartScene" 씬으로 전환하여 게임을 재시작
+
+        foreach (CharacterStat modifier in statsModifiers)
+        {
+            characterStatHandler.RemoveStatModifier(modifier);
+        }
+
+        characterStatHandler.ApplyStatModifier(characterStatHandler.baseStats);
     }
 }
