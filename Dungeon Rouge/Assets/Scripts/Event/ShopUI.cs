@@ -13,14 +13,16 @@ public class ShopUI : MonoBehaviour
     int[] r= new int[4]; 
     public CharacterStat ItemStats; 
     public GameObject player; 
-    CharacterStatHandler PlayerModifiders;   
+    CharacterStatHandler PlayerModifiders;       
+    public GameObject stamp;
+    public GameObject loadScene;
 
     bool isPay;
     
     void Start() 
     {   
         OnRerole(0);
-        PlayerModifiders = player.GetComponent<CharacterStatHandler>();
+        PlayerModifiders = player.GetComponent<CharacterStatHandler>();        
     }
     void ShowDisplay()
     {        
@@ -56,8 +58,9 @@ public class ShopUI : MonoBehaviour
         // Payment(ItemStats.statData.ItemGold);
         // if(isPay)
         // {
-             Debug.Log("구매");
-             PlayerModifiders.AddStatModifier(ItemStats);
+                Debug.Log("구매");
+                PlayerModifiders.AddStatModifier(ItemStats);
+                stamp.SetActive(true);
         //     isPay=!isPay;
         // }
     }
