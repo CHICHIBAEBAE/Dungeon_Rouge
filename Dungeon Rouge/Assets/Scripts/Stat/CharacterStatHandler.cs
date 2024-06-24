@@ -29,7 +29,15 @@ public class CharacterStatHandler : MonoBehaviour
 
     public void AddStatModifier(CharacterStat statModifier)
     {
-        statsModifiers.Add(statModifier);
+        StatData statD=null;
+        if(statModifier.statData != null)
+        {
+            statD=Instantiate(statModifier.statData);
+        }
+        CharacterStat Itemstat = new CharacterStat{ statData=statD };        
+        Itemstat.statsChangeType=statModifier.statsChangeType;
+
+        statsModifiers.Add(Itemstat);
         UpdateCharacterStat();
     }
 
