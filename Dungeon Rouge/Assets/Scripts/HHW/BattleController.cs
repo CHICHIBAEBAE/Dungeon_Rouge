@@ -8,7 +8,7 @@ public class BattleController : MonoBehaviour
 {
     [SerializeField] private CharacterStatHandler characterStatHandler; // 캐릭터 스탯을 관리하는 핸들러
     
-
+    public GameObject player;
     public Text battleLog; //  플레이어와 적의 턴과 배틀 로그를 표시하는 텍스트 UI
     public Button attackButton; // 플레이어가 공격할 때 누르는 버튼
     public Slider playerHPBar; // 플레이어의 체력을 표시하는 UI 슬라이더 
@@ -27,6 +27,9 @@ public class BattleController : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<Player>().gameObject;
+        characterStatHandler = player.GetComponent<CharacterStatHandler>();
+        playerAnimator = player.GetComponentInChildren<Animator>();
         attackButton.onClick.AddListener(OnPlayerAttack); // 공격 버튼에 클릭 이벤트를 추가 -> 없앴더니 배틀 시스템 안돌아감
         playerHPBar.maxValue = characterStatHandler.CurrentStat.statData.MaxHealth; // 플레이어의 최대 체력을 슬라이더의 최대 값으로 설정
         playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth; // 슬라이더를 플레이어의 현재 체력 값으로 초기화

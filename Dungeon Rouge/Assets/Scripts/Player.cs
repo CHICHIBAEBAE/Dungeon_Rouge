@@ -1,9 +1,18 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour
-{ 
-    void Start()
+{
+    static public Player instance;
+    void Awake()
     {
-        DontDestroyOnLoad(gameObject);    
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

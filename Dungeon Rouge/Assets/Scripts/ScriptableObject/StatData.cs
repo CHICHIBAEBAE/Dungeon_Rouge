@@ -9,4 +9,5 @@ public class StatData : ScriptableObject
     public int Lv;
     public float Atk;
     public int MaxHealth;
+    public int PlayerHaveGold;
 }
