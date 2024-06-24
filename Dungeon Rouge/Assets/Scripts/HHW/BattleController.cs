@@ -7,11 +7,14 @@ using UnityEngine.UI;
 public class BattleController : MonoBehaviour
 {
     [SerializeField] private CharacterStatHandler characterStatHandler; // 캐릭터 스탯을 관리하는 핸들러
+    
 
     public Text battleLog; //  플레이어와 적의 턴과 배틀 로그를 표시하는 텍스트 UI
     public Button attackButton; // 플레이어가 공격할 때 누르는 버튼
     public Slider playerHPBar; // 플레이어의 체력을 표시하는 UI 슬라이더 
     public Slider enemyHPBar;// 적의 체력을 표시하는 UI 슬라이더
+    public Animator playerAnimator;
+    public Animator enemyAnimator;
     public float typingSpeed = 0.05f;  // 배틀 로그 텍스트가 출력되는 속도
 
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
@@ -81,6 +84,8 @@ public class BattleController : MonoBehaviour
             string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyHealth}"; // 배틀 로그에 출력할 메시지 생성
             StartCoroutine(TypeText(message)); // 메시지를 타이핑 속도로 출력
             playerActionCompleted = true; // 플레이어의 행동 완료 플래그를 true로 설정
+            playerAnimator.SetTrigger("Attack1");
+            enemyAnimator.SetTrigger("Hurt");
 
             enemyHPBar.value = enemyHealth; // 적의 체력 슬라이더를 업데이트
         }
@@ -93,6 +98,8 @@ public class BattleController : MonoBehaviour
         Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}");
         string message = $"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}"; // 배틀 로그에 출력할 메시지 생성
         StartCoroutine(TypeText(message)); // 메시지를 타이핑 속도로 출력
+        enemyAnimator.SetTrigger("Attack");
+        playerAnimator.SetTrigger("Hurt");
 
         playerHPBar.value = characterStatHandler.CurrentStat.statData.MaxHealth; // 플레이어의 체력 슬라이더를 업데이트
     }
