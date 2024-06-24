@@ -9,6 +9,7 @@ public class ShopUI : MonoBehaviour
     public Image[] ItemImg=new Image[5];
     public Text ItemName;
     public Text ItemInfo; 
+    public Text playerHaveGoldTxt;     
     public List<ItemData> ItemList;
     int[] r= new int[4]; 
     public CharacterStat ItemStats; 
@@ -17,19 +18,28 @@ public class ShopUI : MonoBehaviour
     public GameObject stamp;
     public GameObject loadScene;
 
+    int curGold;
+    int curHp;
+    int maxHP;
+
     bool isPay;
     
     void Start() 
     {   
         OnRerole(0);
-        PlayerModifiders = player.GetComponent<CharacterStatHandler>();        
+        PlayerModifiders = player.GetComponent<CharacterStatHandler>();
+        //curHp=PlayerModifiders.baseStats.statData.curHealth;
+        maxHP=PlayerModifiders.baseStats.statData.MaxHealth;
+        curGold=PlayerModifiders.CurrentStat.statData.PlayerHaveGold;
     }
     void ShowDisplay()
-    {        
+    {   
+        
+        playerHaveGoldTxt.text= curGold.ToString();
         for (int i = 0; i < 4;i++)
         {
             ItemImg[i].sprite=ItemList[r[i]].ItemImg;
-            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();            
+            ItemGold[i].text=ItemList[r[i]].ItemGold.ToString();
         }
     }
     public void OnSelect(int btnNum)
@@ -48,7 +58,7 @@ public class ShopUI : MonoBehaviour
         // if(isPay)
         // {       
                  Debug.Log("회복");
-        //       PlayerModifiders.statData.CurHealth=Player.statData.MaxHealth;
+                 curHp=maxHP;
         //       isPay=!isPay;
         // }
     }
@@ -61,6 +71,7 @@ public class ShopUI : MonoBehaviour
                 Debug.Log("구매");
                 PlayerModifiders.AddStatModifier(ItemStats);
                 stamp.SetActive(true);
+                playerHaveGoldTxt.text= curGold.ToString();
         //     isPay=!isPay;
         // }
     }
@@ -91,9 +102,9 @@ public class ShopUI : MonoBehaviour
 
     bool Payment(int _gold)
     {
-        //if(Player.statData.gold>=_gold)
+        //if(curGold>=_gold)
         //{
-        //     PlayerModifiders.baseStats.statData.gold-=_gold;
+             curGold-=_gold;
              return isPay=true;
         //}               
         //else 
