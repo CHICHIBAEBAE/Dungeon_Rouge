@@ -1,13 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartSceneUI : MonoBehaviour
 {
     public GameObject OptionPanel;
+    public GameObject loadScene;
+
     public void OnStart()
     {
+        loadScene.SetActive(true);
+
         DataManager.instance.btnCount = 0;
-        SceneManager.LoadScene(1);
+        Invoke("LoadScene", 1.5f);
     }
 
     public void OnOption()
@@ -33,4 +38,8 @@ public class StartSceneUI : MonoBehaviour
         #endif
     }
 
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(1);
+    }
 }
