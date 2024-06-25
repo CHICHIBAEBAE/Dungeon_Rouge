@@ -12,12 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/KKEScene.unity
     guid: 3beffbb5095032e478a87756292ac731
   - enabled: 1
-    path: Assets/Scenes/BattleScene.unity
-    guid: 4b18a63ef32315e4ebceffd0f7641cd2
+    path: Assets/Scenes/BattleScene 2.unity
+    guid: 6f019d44a1fc5804e88e67cba8e6dd21
   - enabled: 1
     path: Assets/Scenes/JunghoScene.unity
     guid: c7694cdc9c951cd47b9b262ca78c2657
   - enabled: 1
     path: Assets/Scenes/BattleScene 1.unity
     guid: 88d633e135d32e241b46ab584aa27883
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: 4b18a63ef32315e4ebceffd0f7641cd2
   m_configObjects: {}
