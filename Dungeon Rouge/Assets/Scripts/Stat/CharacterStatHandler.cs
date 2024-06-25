@@ -7,7 +7,6 @@ using UnityEngine;
 public class CharacterStatHandler : MonoBehaviour
 {
     public CharacterStat baseStats;
-
     public CharacterStat CurrentStat { get; private set; } = new();
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
