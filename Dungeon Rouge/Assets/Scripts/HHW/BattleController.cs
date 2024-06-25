@@ -8,9 +8,7 @@ public class BattleController : MonoBehaviour
 {
     protected CharacterStatHandler characterStatHandler; // ĳ���� ������ �����ϴ� �ڵ鷯
     protected CharacterStatHandler enemyStatHandler;
-
-    public List<CharacterStat> statsModifiers = new List<CharacterStat>();
-
+   
     public GameObject player;
     public GameObject enemy;
     public Text battleLog; //  �÷��̾�� ���� �ϰ� ��Ʋ �α׸� ǥ���ϴ� �ؽ�Ʈ UI
@@ -205,15 +203,12 @@ public class BattleController : MonoBehaviour
     public void RestartGame()
     {
         Player.instance.curHP = 100;
+        Player.instance.curMoney = 300;
         playerAnimator.SetTrigger("Retry");
+        characterStatHandler.RemoveAllStatModifier();
+
         SceneManager.LoadScene("StartScene"); //"StartScene" ������ ��ȯ�Ͽ� ������ �����
         
-
-        foreach (CharacterStat modifier in statsModifiers)
-        {
-            characterStatHandler.RemoveStatModifier(modifier);
-        }
-
         characterStatHandler.ApplyStatModifier(characterStatHandler.baseStats);
     }
 }
