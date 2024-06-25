@@ -17,10 +17,10 @@ MonoBehaviour:
   btnDescription: 
   loadSceneName: BattleScene 2
   styleidx: 1
-  resultIcon: {fileID: -1179532509, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
-  resultName: "\uC720\uBB3C \uD68D\uB4DD \uAC00\uB2A5"
+  resultIcon: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  resultName: "\uAE08\uD654 \uD68D\uB4DD \uAC00\uB2A5"
   stageName: "<color=orange>\uC815\uC608 \uBAAC\uC2A4\uD130 \uC2A4\uD14C\uC774\uC9C0</color>"
-  stageDescription: "\uBAAC\uC2A4\uD130 \uCC98\uCE58 \uC2DC \uC720\uBB3C \uD68D\uB4DD
-    \uAC00\uB2A5"
+  stageDescription: "\uBAAC\uC2A4\uD130 \uCC98\uCE58 \uC2DC \uB2E4\uB7C9\uC758 \uAE08\uD654
+    \uD68D\uB4DD \uAC00\uB2A5"
   prefab: {fileID: 7625327328565950356, guid: e2b1227b536a3ed4f9c864e96c29610f, type: 3}
   probability: 0.2

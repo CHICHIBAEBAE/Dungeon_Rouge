@@ -18,7 +18,7 @@ MonoBehaviour:
   loadSceneName: BattleScene 2
   styleidx: 0
   resultIcon: {fileID: -1825806167, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
-  resultName: "\uAE08\uD654 \uD68D\uB4DD \uAC00"
+  resultName: "\uAE08\uD654 \uD68D\uB4DD \uAC00\uB2A5"
   stageName: "\uC77C\uBC18 \uBAAC\uC2A4\uD130 \uC2A4\uD14C\uC774\uC9C0"
   stageDescription: "\uBAAC\uC2A4\uD130 \uCC98\uCE58 \uC2DC \uC77C\uC815\uB7C9\uC758
     \uAE08\uD654 \uD68D\uB4DD \uAC00\uB2A5"
