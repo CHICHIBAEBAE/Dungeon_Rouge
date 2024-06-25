@@ -30,8 +30,7 @@ public class ShopUI : MonoBehaviour
         curHp = characterStatHandler.CurrentStat.statData.CurHealth;
         maxHP = characterStatHandler.baseStats.statData.MaxHealth;
         curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
-        OnRerole(0);
-        Debug.Log(curGold);
+        OnRerole(0);        
     }
     void ShowDisplay()
     {
