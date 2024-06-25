@@ -25,13 +25,12 @@ public class ShopUI : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>().gameObject;
+        player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         curHp = characterStatHandler.CurrentStat.statData.CurHealth;
         maxHP = characterStatHandler.baseStats.statData.MaxHealth;
         curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
-        OnRerole(0);
-        Debug.Log(curGold);
+        OnRerole(0);        
     }
     void ShowDisplay()
     {
@@ -48,8 +47,8 @@ public class ShopUI : MonoBehaviour
         ItemInfo.text = ItemList[r[btnNum]].ItemInfo.ToString();
         ItemGold[4].text = ItemList[r[btnNum]].ItemGold.ToString();
         ItemImg[4].sprite = ItemList[r[btnNum]].ItemImg;
-
         ItemStats.statData = ItemList[r[btnNum]];
+        ItemStats.statData.PlayerHaveGold= ItemList[r[btnNum]].ItemGold;
     }
 
     public void OnHeal(int gold)

@@ -15,4 +15,4 @@ MonoBehaviour:
   Atk: 10
   CurHealth: 100
   MaxHealth: 100
-  PlayerHaveGold: 300
+  PlayerHaveGold: 0

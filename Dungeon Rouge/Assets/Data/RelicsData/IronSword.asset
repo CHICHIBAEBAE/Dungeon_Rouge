@@ -15,7 +15,7 @@ MonoBehaviour:
   Atk: 10
   CurHealth: 0
   MaxHealth: 0
-  PlayerHaveGold: 200
+  PlayerHaveGold: 0
   ItemImg: {fileID: 21300000, guid: 6eca0b3134505e84ea917331e611ceec, type: 3}
   ItemName: "\uAC15\uCCA0\uAC80"
   ItemInfo: "\uAC15\uCCA0\uB85C \uB9CC\uB4E0\uAC80\uC774\uB2E4 \uACF5\uACA9\uB825\uC744

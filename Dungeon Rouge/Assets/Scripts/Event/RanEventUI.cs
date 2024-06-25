@@ -9,6 +9,7 @@ public class RandomUI : MonoBehaviour
 {
     public GameObject ranPanel;
     public GameObject Description;
+    public Text playerHaveGoldTxt;
     public Text EventName;
     public Text EventInfo;
     public Text Choice1;
@@ -20,18 +21,24 @@ public class RandomUI : MonoBehaviour
     ShopUI shopListStats;
     List<ItemData> shopList;
     public CharacterStat ItemStats; 
-    CharacterStatHandler PlayerModifiders;    
+    CharacterStatHandler characterStatHandler;    
     public List<EventData> eventList=new List<EventData>();
     int random;
+    int curGold;
+    int curHp;    
     bool isMoveScene=false;
     
     void Start()
     {   
-        PlayerModifiders = player.GetComponent<CharacterStatHandler>();
+        
+        player = Player.instance.gameObject;
+        characterStatHandler = player.GetComponent<CharacterStatHandler>();
         shopListStats=shop.GetComponent<ShopUI>();
         shopList=shopListStats.ItemList;
         random= Random.Range(0, eventList.Count);
-        
+        curHp = characterStatHandler.CurrentStat.statData.CurHealth;        
+        curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
+        playerHaveGoldTxt.text = $"{curGold}";        
 
         if(ranPanel.activeSelf==true)
         {
@@ -81,20 +88,21 @@ public class RandomUI : MonoBehaviour
             {
                 case EventType.GiveGold:                    
                         Debug.Log("골드획득 "+ stat.intNum);
-                        //PlayerModifiders.baseStats.statData.gold +=stat.intNum;                    
+                        curGold +=stat.intNum;
+                        playerHaveGoldTxt.text = $"{curGold}";
                 break;
                 case EventType.GiveMaxHealth:                    
                         Debug.Log("체력회복 "+ stat.intNum);
-                        //PlayerModifiders.baseStats.statData.MaxHealth +=stat.intNum;                    
+                        curHp +=stat.intNum;
                 break;
                 case EventType.GiveLv:                    
                         Debug.Log("렙업 : "+ stat.intNum);
-                        //PlayerModifiders.baseStats.statData.Lv +=stat.intNum;                    
+                        //characterStatHandler.CurrentStat.statData.Lv; +=stat.intNum;                    
                 break;
                 case EventType.GiveItem:      
                         int ran=Random.Range(0,shopList.Count);
                         ItemStats.statData=shopList[ran];
-                        PlayerModifiders.AddStatModifier(ItemStats); 
+                        characterStatHandler.AddStatModifier(ItemStats); 
                         Debug.Log("유물획득 : "+ shopList[ran].ItemName);
                 break;
                 default:
@@ -127,8 +135,8 @@ public class RandomUI : MonoBehaviour
     {           
         yield return new WaitForSeconds(2);
         isMoveScene=false;
-        Debug.Log("[맵연결 안됐으니 이벤트 1번더]");
-        Start();
-        //SceneManager.LoadScene(num);
+        //Debug.Log("[맵연결 안됐으니 이벤트 1번더]");
+        //Start();
+        SceneManager.LoadScene(num);
     }
 }

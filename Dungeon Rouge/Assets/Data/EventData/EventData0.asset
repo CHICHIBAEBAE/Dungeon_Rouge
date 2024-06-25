@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: EventData0
   m_EditorClassIdentifier: 
   EventName: "\uAE08\uD654 \uBC1C\uACAC"
-  EventInfo: "100\uAE08\uD654\uC744 \uD68D\uB4DD\uD560\uC218 \uC788\uC2B5\uB2C8\uB2E4."
+  EventInfo: "200\uAE08\uD654\uC744 \uD68D\uB4DD\uD560\uC218 \uC788\uC2B5\uB2C8\uB2E4."
   EventChoice1: "\uAC00\uC9C4\uB2E4"
   EventChoice2: 
   eventModifiers1:
   - eventType: 0
     percent: 1
-    intNum: 100
+    intNum: 200
   - eventType: 4
     percent: 1
     intNum: 0
