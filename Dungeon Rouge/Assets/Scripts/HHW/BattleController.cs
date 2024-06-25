@@ -122,6 +122,8 @@ public class BattleController : MonoBehaviour
             }
             Reward();
             yield return new WaitForSeconds(1f);
+
+            loadScene.SetActive(true);
             Invoke("LoadScene", 1.5f);
             Debug.Log("Enemy is defeated");
         }
