@@ -49,9 +49,7 @@ MonoBehaviour:
   baseStats:
     statsChangeType: 2
     statData: {fileID: 11400000, guid: a0c6e60666438354fb92f6904f231c52, type: 2}
-  statsModifiers:
-  - statsChangeType: 0
-    statData: {fileID: 11400000, guid: 58e3393e51fb1e941b675fa5c2f8d6ba, type: 2}
+  statsModifiers: []
 --- !u!114 &496993101598387764
 MonoBehaviour:
   m_ObjectHideFlags: 0
