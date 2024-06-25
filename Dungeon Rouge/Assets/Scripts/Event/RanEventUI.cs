@@ -35,9 +35,8 @@ public class RandomUI : MonoBehaviour
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         shopListStats=shop.GetComponent<ShopUI>();
         shopList=shopListStats.ItemList;
-        random= Random.Range(0, eventList.Count);
-        curHp = characterStatHandler.CurrentStat.statData.CurHealth;        
-        curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
+        random= Random.Range(0, eventList.Count);               
+        curGold = Player.instance.curMoney;
         playerHaveGoldTxt.text = $"{curGold}";        
 
         if(ranPanel.activeSelf==true)
@@ -88,12 +87,12 @@ public class RandomUI : MonoBehaviour
             {
                 case EventType.GiveGold:                    
                         Debug.Log("골드획득 "+ stat.intNum);
-                        curGold +=stat.intNum;
-                        playerHaveGoldTxt.text = $"{curGold}";
+                        Player.instance.curMoney +=stat.intNum;
+                        playerHaveGoldTxt.text = $"{Player.instance.curMoney}";
                 break;
                 case EventType.GiveMaxHealth:                    
                         Debug.Log("체력회복 "+ stat.intNum);
-                        curHp +=stat.intNum;
+                        Player.instance.curHP +=stat.intNum;
                 break;
                 case EventType.GiveLv:                    
                         Debug.Log("렙업 : "+ stat.intNum);
