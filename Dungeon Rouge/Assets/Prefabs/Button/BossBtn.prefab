@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2981898701520090018}
   - component: {fileID: 1652383244679829809}
   - component: {fileID: 5520357626453240465}
+  - component: {fileID: -1665173161656371145}
   m_Layer: 31
   m_Name: BossBtn
   m_TagString: Button
@@ -152,6 +153,22 @@ MonoBehaviour:
   animName: PageOpen
   btn: {fileID: 1652383244679829809}
   btnData: {fileID: 11400000, guid: 3c43613170550b0428f13e55f5e39807, type: 2}
+--- !u!114 &-1665173161656371145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127495201778990882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &4060066417534188942
 GameObject:
   m_ObjectHideFlags: 0

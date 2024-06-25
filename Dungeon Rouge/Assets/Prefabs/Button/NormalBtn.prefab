@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 590306071568719406}
   - component: {fileID: 4426317552671086733}
   - component: {fileID: 5708367169191754517}
+  - component: {fileID: 4809195049616256837}
   m_Layer: 31
   m_Name: NormalBtn
   m_TagString: Button
@@ -152,6 +153,22 @@ MonoBehaviour:
   animName: PageOpen
   btn: {fileID: 4426317552671086733}
   btnData: {fileID: 11400000, guid: 5d022ce7e372ee84cb877766d88d2fac, type: 2}
+--- !u!114 &4809195049616256837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016253664386878930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &5953226422156495555
 GameObject:
   m_ObjectHideFlags: 0
