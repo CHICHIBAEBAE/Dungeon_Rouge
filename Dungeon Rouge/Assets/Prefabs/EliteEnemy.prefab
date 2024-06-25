@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7049418012636136563}
   - component: {fileID: 6843747843822461230}
   m_Layer: 0
-  m_Name: EeletEnemy
+  m_Name: EliteEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
