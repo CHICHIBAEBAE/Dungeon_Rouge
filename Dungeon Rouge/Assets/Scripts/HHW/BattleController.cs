@@ -6,33 +6,36 @@ using UnityEngine.UI;
 
 public class BattleController : MonoBehaviour
 {
-    [SerializeField] private CharacterStatHandler characterStatHandler; // Ä³¸¯ÅÍ ½ºÅÈÀ» °ü¸®ÇÏ´Â ÇÚµé·¯
+    [SerializeField] private CharacterStatHandler characterStatHandler; // Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Úµé·¯
     [SerializeField] private CharacterStatHandler enemyStatHandler;
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
 
     public GameObject player;
     public GameObject enemy;
-    public Text battleLog; //  ÇÃ·¹ÀÌ¾î¿Í ÀûÀÇ ÅÏ°ú ¹èÆ² ·Î±×¸¦ Ç¥½ÃÇÏ´Â ÅØ½ºÆ® UI
-    public Button attackButton; // ÇÃ·¹ÀÌ¾î°¡ °ø°ÝÇÒ ¶§ ´©¸£´Â ¹öÆ°
-    public Slider playerHPBar; // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·ÂÀ» Ç¥½ÃÇÏ´Â UI ½½¶óÀÌ´õ 
-    public Slider enemyHPBar;// ÀûÀÇ Ã¼·ÂÀ» Ç¥½ÃÇÏ´Â UI ½½¶óÀÌ´õ
+    public Text battleLog; //  ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½Æ² ï¿½Î±×¸ï¿½ Ç¥ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ø½ï¿½Æ® UI
+    public Button attackButton; // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°
+    public Slider playerHPBar; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ï´ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ 
+    public Slider enemyHPBar;// ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ï´ï¿½ UI ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½
     public Animator playerAnimator;
     public Animator enemyAnimator;
-    public float typingSpeed = 0.1f;  // ¹èÆ² ·Î±× ÅØ½ºÆ®°¡ Ãâ·ÂµÇ´Â ¼Óµµ
+    public float typingSpeed = 0.1f;  // ï¿½ï¿½Æ² ï¿½Î±ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ÂµÇ´ï¿½ ï¿½Óµï¿½
     private int curHP;
     public int normalEnemyReward;
     public int eliteEnemyReward;
     public int playerHasGold;
+    public Text playerLevelText;
+    public Text enemyLevelText;
+    int enemyMaxHP;
 
     public GameObject loadScene;
     public Animator anim;
     public string animName;
 
-    private bool isPlayerTurn = true; // ÇöÀç ÅÏÀÌ ÇÃ·¹ÀÌ¾îÀÇ ÅÏÀÎÁö ¿©ºÎ¸¦ ³ªÅ¸³»´Â ÇÃ·¡±×
-    private bool playerActionCompleted = false; // ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿ÀÌ ¿Ï·áµÇ¾ú´ÂÁö ¿©ºÎ¸¦ ³ªÅ¸³»´Â ÇÃ·¡±×
+    private bool isPlayerTurn = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
+    private bool playerActionCompleted = false; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
 
-    [SerializeField] private GameObject gameOverUI; // °ÔÀÓ ¿À¹ö ½Ã Ç¥½ÃÇÒ UI
+    [SerializeField] private GameObject gameOverUI; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ UI
 
     void Start()
     {
@@ -47,14 +50,16 @@ public class BattleController : MonoBehaviour
         enemyStatHandler = enemy.GetComponent<CharacterStatHandler>();
         playerAnimator = player.GetComponentInChildren<Animator>();
         enemyAnimator = enemy.GetComponentInChildren<Animator>();
-        attackButton.onClick.AddListener(OnPlayerAttack); // °ø°Ý ¹öÆ°¿¡ Å¬¸¯ ÀÌº¥Æ®¸¦ Ãß°¡ -> ¾ø¾Ý´õ´Ï ¹èÆ² ½Ã½ºÅÛ ¾Èµ¹¾Æ°¨
+        attackButton.onClick.AddListener(OnPlayerAttack); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ß°ï¿½ -> ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ ï¿½ï¿½Æ² ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ï¿½Æ°ï¿½
         curHP = Player.instance.curHP;
-        playerHPBar.maxValue = characterStatHandler.CurrentStat.statData.MaxHealth; // ÇÃ·¹ÀÌ¾îÀÇ ÃÖ´ë Ã¼·ÂÀ» ½½¶óÀÌ´õÀÇ ÃÖ´ë °ªÀ¸·Î ¼³Á¤
-        playerHPBar.value = Player.instance.curHP; // ½½¶óÀÌ´õ¸¦ ÇÃ·¹ÀÌ¾îÀÇ ÇöÀç Ã¼·Â °ªÀ¸·Î ÃÊ±âÈ­
-        enemyHPBar.maxValue = enemyStatHandler.CurrentStat.statData.MaxHealth; // ÀûÀÇ ÃÖ´ë Ã¼·ÂÀ» ½½¶óÀÌ´õÀÇ ÃÖ´ë °ªÀ¸·Î ¼³Á¤
-        enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // ½½¶óÀÌ´õ¸¦ ÀûÀÇ ÇöÀç Ã¼·Â °ªÀ¸·Î ÃÊ±âÈ­
+        playerHPBar.maxValue = characterStatHandler.CurrentStat.statData.MaxHealth; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        playerHPBar.value = Player.instance.curHP; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+        enemyHPBar.maxValue = enemyStatHandler.CurrentStat.statData.MaxHealth; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         playerHasGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
-        StartCoroutine(Battle()); // ¹èÆ² ÄÚ·çÆ¾ ½ÃÀÛ
+        StartCoroutine(Battle()); // ï¿½ï¿½Æ² ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
+        enemyMaxHP=enemyStatHandler.CurrentStat.statData.MaxHealth;
+        UpdataTxtUI();
     }
 
     public IEnumerator WaitForAnimation(Animator anim, string animName)
@@ -69,42 +74,44 @@ public class BattleController : MonoBehaviour
 
     IEnumerator Battle()
     {
-        // ÇÃ·¹ÀÌ¾î¿Í ÀûÀÇ Ã¼·ÂÀÌ ¸ðµÎ 0º¸´Ù Å¬ ¶§±îÁö ¹Ýº¹
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ Å¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
         while (Player.instance.curHP > 0 && enemyStatHandler.CurrentStat.statData.MaxHealth > 0)
         {
-            if (isPlayerTurn) // ÇÃ·¹ÀÌ¾îÀÇ ÅÏÀÌ¸é
+            if (isPlayerTurn) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½
             {
                 Debug.Log("Player's Turn started");
-                yield return StartCoroutine(TypeText("Player's Turn")); // ''Player's Turn' ÅØ½ºÆ® Ãâ·Â
-                playerActionCompleted = false; // ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿ ¿Ï·á ÇÃ·¡±×¸¦ false·Î ¼³Á¤
-                yield return new WaitUntil(() => playerActionCompleted); // ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿ÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+                yield return StartCoroutine(TypeText("Player's Turn")); // ''Player's Turn' ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
+                playerActionCompleted = false; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½Ï·ï¿½ ï¿½Ã·ï¿½ï¿½×¸ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+                yield return new WaitUntil(() => playerActionCompleted); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
                 Debug.Log("Player's Turn completed"); 
-                isPlayerTurn = false; // ÀûÀÇ ÅÏÀ¸·Î ÀüÈ¯
+                isPlayerTurn = false; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+                UpdataTxtUI();
             }
             else
             {
                 Debug.Log("Enemy's Turn started");
-                yield return StartCoroutine(TypeText("Enemy's Turn")); // "Enemy's Turn" ÅØ½ºÆ® Ãâ·Â
-                yield return new WaitForSeconds(1.0f); // 1ÃÊ ´ë±â
-                EnemyAttack(); // ÀûÀÇ °ø°Ý ÇÔ¼ö È£Ãâ
+                yield return StartCoroutine(TypeText("Enemy's Turn")); // "Enemy's Turn" ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
+                yield return new WaitForSeconds(1.0f); // 1ï¿½ï¿½ ï¿½ï¿½ï¿½
+                EnemyAttack(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ È£ï¿½ï¿½
                 Debug.Log("Enemy's Turn completed"); 
-                isPlayerTurn = true; // ÇÃ·¹ÀÌ¾îÀÇ ÅÏÀ¸·Î ÀüÈ¯
+                isPlayerTurn = true; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+                UpdataTxtUI();
             } 
-            yield return new WaitForSeconds(2.0f); // ÅÏ »çÀÌ¿¡ 4ÃÊ ´ë±â -> ÇÑ ±ÛÀÚ¾¿ Å¸ÀÌÇÎ ÇÏ´Âµ¥ ½Ã°£ÀÌ °É·Á °ø°Ý Ã³¸® ¶§ ±ÛÀÚ°¡ ´Ù ³ª¿À´Âµ¥ 4ÃÊÁ¤µµ °É·Á¼­ 4ÃÊ´ë±â¼³Á¤
+            yield return new WaitForSeconds(2.0f); // ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¿ï¿½ 4ï¿½ï¿½ ï¿½ï¿½ï¿½ -> ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¾ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´Âµï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½É·ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Âµï¿½ 4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½É·ï¿½ï¿½ï¿½ 4ï¿½Ê´ï¿½â¼³ï¿½ï¿½
         }
 
-        if (Player.instance.curHP <= 0) // ÇÃ·¹ÀÌ¾î°¡ ÆÐ¹èÇÑ °æ¿ì
+        if (Player.instance.curHP <= 0) // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½Ð¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         {
             Debug.Log("Player is defeated");
-            yield return StartCoroutine(TypeText("Player is defeated")); // "Player is defeated" ÅØ½ºÆ® Ãâ·Â
+            yield return StartCoroutine(TypeText("Player is defeated")); // "Player is defeated" ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
             playerAnimator.SetTrigger("Death");
             yield return new WaitForSeconds(1f);
-            GameOver(); // °ÔÀÓ ¿À¹ö ÇÔ¼ö È£Ãâ
+            GameOver(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½ È£ï¿½ï¿½
         }
         else if (enemyStatHandler.CurrentStat.statData.MaxHealth <= 0)
         {
             enemyAnimator.SetTrigger("Death");
-            yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" ÅØ½ºÆ® Ãâ·Â
+            yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½
             if(DataManager.instance.styleIdx == 0)
             {
                 yield return StartCoroutine(TypeText($"Player Get {normalEnemyReward} Gold"));
@@ -124,6 +131,11 @@ public class BattleController : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    void UpdataTxtUI()
+    {
+        playerLevelText.text=$"Player:  {Player.instance.curHP} / {characterStatHandler.CurrentStat.statData.MaxHealth}";
+        enemyLevelText.text=$"Enemy:  {enemyStatHandler.CurrentStat.statData.MaxHealth} / {enemyMaxHP}";
+    }
 
     void Reward()
     {
@@ -139,59 +151,59 @@ public class BattleController : MonoBehaviour
 
     void OnPlayerAttack() 
     {
-        if (isPlayerTurn && !playerActionCompleted) // ÇÃ·¹ÀÌ¾î ÅÏÀÌ°í, ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿ÀÌ ¿Ï·áµÇÁö ¾Ê¾Ò´Ù¸é
+        if (isPlayerTurn && !playerActionCompleted) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½Ì°ï¿½, ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½àµ¿ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½
         {
-            float damage = characterStatHandler.CurrentStat.statData.Atk; // ÇÃ·¹ÀÌ¾îÀÇ °ø°Ý·ÂÀ» °¡Á®¿È
-            enemyStatHandler.CurrentStat.statData.MaxHealth -= (int)damage; // ÀûÀÇ Ã¼·Â¿¡¼­ ÇÃ·¹ÀÌ¾îÀÇ °ø°Ý·Â¸¸Å­ »­
+            float damage = characterStatHandler.CurrentStat.statData.Atk; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            enemyStatHandler.CurrentStat.statData.MaxHealth -= (int)damage; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·Â¸ï¿½Å­ ï¿½ï¿½
             Debug.Log($"Player attacked the enemy for {damage} damage. Enemy health: {enemyStatHandler.CurrentStat.statData.MaxHealth}"); 
-            string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyStatHandler.CurrentStat.statData.MaxHealth}"; // ¹èÆ² ·Î±×¿¡ Ãâ·ÂÇÒ ¸Þ½ÃÁö »ý¼º
-            StartCoroutine(TypeText(message)); // ¸Þ½ÃÁö¸¦ Å¸ÀÌÇÎ ¼Óµµ·Î Ãâ·Â
-            playerActionCompleted = true; // ÇÃ·¹ÀÌ¾îÀÇ Çàµ¿ ¿Ï·á ÇÃ·¡±×¸¦ true·Î ¼³Á¤
+            string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyStatHandler.CurrentStat.statData.MaxHealth}"; // ï¿½ï¿½Æ² ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            StartCoroutine(TypeText(message)); // ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+            playerActionCompleted = true; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½àµ¿ ï¿½Ï·ï¿½ ï¿½Ã·ï¿½ï¿½×¸ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             playerAnimator.SetTrigger("Attack1");
             enemyAnimator.SetTrigger("Hurt");
 
-            enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // ÀûÀÇ Ã¼·Â ½½¶óÀÌ´õ¸¦ ¾÷µ¥ÀÌÆ®
+            enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         }
     }
 
     void EnemyAttack()
     {
-        float damage = enemyStatHandler.CurrentStat.statData.Atk; // ÀûÀÇ °ø°Ý·ÂÀ» ·£´ýÀ¸·Î ¼³Á¤ (100~200 »çÀÌ : °ÔÀÓ ¿À¹ö¾À Å×½ºÆ®È®ÀÎÀ» À§ÇØ ÇÃ·¹ÀÌ¾î Ã¼·Âº¸´Ù ³ô°Ô ¼³Á¤ÇÔ)
-        Player.instance.curHP -= (int)damage; // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·Â¿¡¼­ ÀûÀÇ °ø°Ý·Â¸¸Å­ »­
+        float damage = enemyStatHandler.CurrentStat.statData.Atk; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (100~200 ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ®È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã¼ï¿½Âºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+        Player.instance.curHP -= (int)damage; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Ã¼ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý·Â¸ï¿½Å­ ï¿½ï¿½
         Debug.Log($"Enemy attacked the player for {damage} damage. Player health: {characterStatHandler.CurrentStat.statData.MaxHealth}");
-        string message = $"Enemy attacked the player for {damage} damage. Player health: {Player.instance.curHP}"; // ¹èÆ² ·Î±×¿¡ Ãâ·ÂÇÒ ¸Þ½ÃÁö »ý¼º
-        StartCoroutine(TypeText(message)); // ¸Þ½ÃÁö¸¦ Å¸ÀÌÇÎ ¼Óµµ·Î Ãâ·Â
+        string message = $"Enemy attacked the player for {damage} damage. Player health: {Player.instance.curHP}"; // ï¿½ï¿½Æ² ï¿½Î±×¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        StartCoroutine(TypeText(message)); // ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         enemyAnimator.SetTrigger("Attack");
         playerAnimator.SetTrigger("Hurt");
 
-        playerHPBar.value = Player.instance.curHP; // ÇÃ·¹ÀÌ¾îÀÇ Ã¼·Â ½½¶óÀÌ´õ¸¦ ¾÷µ¥ÀÌÆ®
+        playerHPBar.value = Player.instance.curHP; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
     }
 
     IEnumerator TypeText(string message)
     {
-        battleLog.text = ""; // º£Æ² ·Î±×¸¦ ÃÊ±âÈ­
-        foreach (char letter in message.ToCharArray()) // ¸Þ½ÃÁöÀÇ °¢ ¹®ÀÚ¸¦ ¼øÂ÷ÀûÀ¸·Î
+        battleLog.text = ""; // ï¿½ï¿½Æ² ï¿½Î±×¸ï¿½ ï¿½Ê±ï¿½È­
+        foreach (char letter in message.ToCharArray()) // ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         {
-            battleLog.text += letter; // ¹èÆ²·Î±×¿¡ Ãß°¡
-            yield return new WaitForSeconds(0.01f); //Å¸ÀÌÇÎ ¼Óµµ¸¸Å­ ´ë±â
+            battleLog.text += letter; // ï¿½ï¿½Æ²ï¿½Î±×¿ï¿½ ï¿½ß°ï¿½
+            yield return new WaitForSeconds(0.01f); //Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½Å­ ï¿½ï¿½ï¿½
         }
     }
 
     public void OnBattleExit()
     {
-        SceneManager.LoadScene("KKEScene"); // "KKEScene"¾ÀÀ¸·Î ÀüÈ¯
+        SceneManager.LoadScene("KKEScene"); // "KKEScene"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
     }
 
     private void GameOver()
     {
         
-        gameOverUI.SetActive(true); // °ÔÀÓ ¿À¹ö UI¸¦ È°¼ºÈ­
+        gameOverUI.SetActive(true); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ È°ï¿½ï¿½È­
     }
 
     public void RestartGame()
     {
         playerAnimator.SetTrigger("Retry");
-        SceneManager.LoadScene("StartScene"); //"StartScene" ¾ÀÀ¸·Î ÀüÈ¯ÇÏ¿© °ÔÀÓÀ» Àç½ÃÀÛ
+        SceneManager.LoadScene("StartScene"); //"StartScene" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
         foreach (CharacterStat modifier in statsModifiers)
         {

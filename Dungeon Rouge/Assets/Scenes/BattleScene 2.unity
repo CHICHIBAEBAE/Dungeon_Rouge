@@ -1692,6 +1692,8 @@ MonoBehaviour:
   normalEnemyReward: 100
   eliteEnemyReward: 300
   playerHasGold: 0
+  playerLevelText: {fileID: 1025213888}
+  enemyLevelText: {fileID: 1487476154}
   loadScene: {fileID: 2856243690374962105}
   anim: {fileID: 3511897180356330712}
   animName: StartScene
