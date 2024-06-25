@@ -9,7 +9,7 @@ public class EndingUI : MonoBehaviour
 {
     public Text endUI;
     
-    string message = $"ÆÀÀå : À±Ä¡ÈÆ ÆÀ¿ø : ±è°­Àº ÆÀ¿ø : ÀÌÁ¤È£ ÆÀ¿ø : ÇÏÇö¿ì";
+    string message = $"ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½è°­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
     private void Start()
     {
