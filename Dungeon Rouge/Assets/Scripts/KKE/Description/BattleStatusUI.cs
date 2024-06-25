@@ -11,12 +11,18 @@ public class BattleStatusUI : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<Player>().gameObject;
+        CharacterStatHandler = player.GetComponent<CharacterStatHandler>();
+    }
+
+    private void Update()
+    {
         UpdateUI();
     }
 
     private void UpdateUI()
     {
-        playerHpTxt.text = $" 체력  : {CharacterStatHandler.CurrentStat.statData.MaxHealth} / 100";
+        playerHpTxt.text = $" 체력  : <color=red>{Player.instance.curHP}</color> / <color=red>{CharacterStatHandler.CurrentStat.statData.MaxHealth}</color>";
         playerAtkTxt.text = $"공격력 : {CharacterStatHandler.CurrentStat.statData.Atk}";
     }
 }
