@@ -161,7 +161,7 @@ public class BattleController : MonoBehaviour
             string message = $"Player attacked the enemy for {damage} damage. Enemy health: {enemyStatHandler.CurrentStat.statData.MaxHealth}"; // ��Ʋ �α׿� ����� �޽��� ����
             StartCoroutine(TypeText(message)); // �޽����� Ÿ���� �ӵ��� ���
             playerActionCompleted = true; // �÷��̾��� �ൿ �Ϸ� �÷��׸� true�� ����
-            playerAnimator.SetTrigger("Attack1");
+            playerAnimator.SetTrigger("Attack2");
             enemyAnimator.SetTrigger("Hurt");
 
             enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // ���� ü�� �����̴��� ������Ʈ
@@ -204,8 +204,10 @@ public class BattleController : MonoBehaviour
 
     public void RestartGame()
     {
+        Player.instance.curHP = 100;
         playerAnimator.SetTrigger("Retry");
         SceneManager.LoadScene("StartScene"); //"StartScene" ������ ��ȯ�Ͽ� ������ �����
+        
 
         foreach (CharacterStat modifier in statsModifiers)
         {
