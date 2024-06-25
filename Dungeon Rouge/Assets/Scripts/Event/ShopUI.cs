@@ -25,7 +25,7 @@ public class ShopUI : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>().gameObject;
+        player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         curHp = characterStatHandler.CurrentStat.statData.CurHealth;
         maxHP = characterStatHandler.baseStats.statData.MaxHealth;

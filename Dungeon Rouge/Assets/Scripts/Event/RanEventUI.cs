@@ -31,7 +31,7 @@ public class RandomUI : MonoBehaviour
     void Start()
     {   
         
-        player = FindObjectOfType<Player>().gameObject;
+        player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         shopListStats=shop.GetComponent<ShopUI>();
         shopList=shopListStats.ItemList;

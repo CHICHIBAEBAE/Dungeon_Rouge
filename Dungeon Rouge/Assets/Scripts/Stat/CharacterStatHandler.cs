@@ -34,8 +34,9 @@ public class CharacterStatHandler : MonoBehaviour
         if(statModifier.statData != null)
         {
             statD=Instantiate(statModifier.statData);
+            statD.PlayerHaveGold=0;
         }
-        CharacterStat Itemstat = new CharacterStat{ statData=statD };        
+        CharacterStat Itemstat = new CharacterStat{ statData=statD };
         Itemstat.statsChangeType=statModifier.statsChangeType;
 
         statsModifiers.Add(Itemstat);
