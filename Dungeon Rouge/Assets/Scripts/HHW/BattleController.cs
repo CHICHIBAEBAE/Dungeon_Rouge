@@ -121,7 +121,7 @@ public class BattleController : MonoBehaviour
             else if(DataManager.instance.styleIdx == 2)
             {
                 loadScene.SetActive(true);
-                //BGMManager.BGMinstance.
+                DataManager.instance.styleIdx =9;
                 yield return new WaitForSeconds(2f);
                 SceneManager.LoadScene(4);
             }
