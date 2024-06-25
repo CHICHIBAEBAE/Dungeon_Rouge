@@ -123,6 +123,10 @@ public class BattleController : MonoBehaviour
                 loadScene.SetActive(true);
                 DataManager.instance.styleIdx =9;
                 BGMManager.BGMinstance.BGMStop();
+                characterStatHandler.RemoveAllStatModifier();
+                Player.instance.curHP = 100;
+                Player.instance.curMoney = 300;
+
                 yield return new WaitForSeconds(2f);
                 SceneManager.LoadScene(4);
             }
