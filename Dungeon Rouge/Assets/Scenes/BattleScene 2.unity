@@ -1468,7 +1468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784343433}
   m_Layer: 0
-  m_Name: EeletEnemy
+  m_Name: EliteEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1709,8 +1709,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterStatHandler: {fileID: 5388366958190719042}
+  enemyStatHandler: {fileID: 0}
   statsModifiers: []
   player: {fileID: 0}
+  enemy: {fileID: 0}
   battleLog: {fileID: 1666177803}
   attackButton: {fileID: 1061530872}
   playerHPBar: {fileID: 1036455579}
@@ -1718,6 +1720,9 @@ MonoBehaviour:
   playerAnimator: {fileID: 584304836426096522}
   enemyAnimator: {fileID: 1741376284}
   typingSpeed: 0.05
+  normalEnemyReward: 0
+  EliteEnemyReward: 0
+  playerHasGold: 0
   gameOverUI: {fileID: 1248618107}
 --- !u!4 &986613702
 Transform:

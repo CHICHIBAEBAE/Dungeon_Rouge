@@ -19,8 +19,11 @@ public class BattleController : MonoBehaviour
     public Slider enemyHPBar;// 적의 체력을 표시하는 UI 슬라이더
     public Animator playerAnimator;
     public Animator enemyAnimator;
-    public float typingSpeed = 0.01f;  // 배틀 로그 텍스트가 출력되는 속도
+    public float typingSpeed = 0.1f;  // 배틀 로그 텍스트가 출력되는 속도
     private int curHP;
+    public int normalEnemyReward;
+    public int EliteEnemyReward;
+    public int playerHasGold;
 
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
     private bool playerActionCompleted = false; // 플레이어의 행동이 완료되었는지 여부를 나타내는 플래그
@@ -41,6 +44,7 @@ public class BattleController : MonoBehaviour
         playerHPBar.value = characterStatHandler.CurrentStat.statData.CurHealth; // 슬라이더를 플레이어의 현재 체력 값으로 초기화
         enemyHPBar.maxValue = enemyStatHandler.CurrentStat.statData.MaxHealth; // 적의 최대 체력을 슬라이더의 최대 값으로 설정
         enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // 슬라이더를 적의 현재 체력 값으로 초기화
+        playerHasGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
         StartCoroutine(Battle()); // 배틀 코루틴 시작
     }
 
@@ -67,7 +71,7 @@ public class BattleController : MonoBehaviour
                 Debug.Log("Enemy's Turn completed"); 
                 isPlayerTurn = true; // 플레이어의 턴으로 전환
             } 
-            yield return new WaitForSeconds(3.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
+            yield return new WaitForSeconds(4.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
         }
 
         if (curHP <= 0) // 플레이어가 패배한 경우
@@ -81,7 +85,7 @@ public class BattleController : MonoBehaviour
         else if (enemyStatHandler.CurrentStat.statData.MaxHealth <= 0)
         {
             enemyAnimator.SetTrigger("Death");
-
+            Reward();
             Debug.Log("Enemy is defeated");
             yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" 텍스트 출력
         }
@@ -91,11 +95,11 @@ public class BattleController : MonoBehaviour
     {
         if(DataManager.instance.styleIdx == 0)
         {
-            characterStatHandler.CurrentStat.statData.PlayerHaveGold += 100;
+            playerHasGold += normalEnemyReward;
         }
         else if (DataManager.instance.styleIdx == 1)
         {
-            characterStatHandler.CurrentStat.statData.PlayerHaveGold += 200;
+            playerHasGold += EliteEnemyReward;
         }
     }
 
