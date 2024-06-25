@@ -29,7 +29,7 @@ public class ShopUI : MonoBehaviour
         player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         curHp = Player.instance.curHP;
-        maxHP = characterStatHandler.baseStats.statData.MaxHealth;
+        maxHP = characterStatHandler.CurrentStat.statData.MaxHealth;
         curGold = Player.instance.curMoney;
         OnRerole(0);        
     }
@@ -60,7 +60,7 @@ public class ShopUI : MonoBehaviour
             curHp=Player.instance.curHP;
             Player.instance.curHP = maxHP;
             isPay = !isPay;
-            OutputTxt.text=$"{curHp}HP 최대회복= {Player.instance.curHP}HP";
+            OutputTxt.text=$"{curHp}HP 최대회복= {Player.instance.curHP}HP";            
         }
     }
 
@@ -73,6 +73,7 @@ public class ShopUI : MonoBehaviour
             characterStatHandler.AddStatModifier(ItemStats);
             playerHaveGoldTxt.text = Player.instance.curMoney.ToString();
             isPay = !isPay;
+            maxHP=characterStatHandler.CurrentStat.statData.MaxHealth;
         }
     }
 
