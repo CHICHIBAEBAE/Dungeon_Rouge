@@ -29,12 +29,12 @@ public class ShopUI : MonoBehaviour
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         curHp = characterStatHandler.CurrentStat.statData.CurHealth;
         maxHP = characterStatHandler.baseStats.statData.MaxHealth;
-        curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
+        curGold = Player.instance.curMoney;
         OnRerole(0);        
     }
     void ShowDisplay()
     {
-        playerHaveGoldTxt.text = $"{curGold}";
+        playerHaveGoldTxt.text = $"{Player.instance.curMoney}";
         for (int i = 0; i < 4; i++)
         {
             ItemImg[i].sprite = ItemList[r[i]].ItemImg;
@@ -48,7 +48,7 @@ public class ShopUI : MonoBehaviour
         ItemGold[4].text = ItemList[r[btnNum]].ItemGold.ToString();
         ItemImg[4].sprite = ItemList[r[btnNum]].ItemImg;
         ItemStats.statData = ItemList[r[btnNum]];
-        ItemStats.statData.PlayerHaveGold= ItemList[r[btnNum]].ItemGold;
+        ItemStats.statData.PlayerHaveGold = ItemList[r[btnNum]].ItemGold;
     }
 
     public void OnHeal(int gold)
@@ -70,7 +70,7 @@ public class ShopUI : MonoBehaviour
             Debug.Log("구매");
             characterStatHandler.AddStatModifier(ItemStats);
             //stamp.SetActive(true);
-            playerHaveGoldTxt.text = curGold.ToString();
+            playerHaveGoldTxt.text = Player.instance.curMoney.ToString();
             isPay = !isPay;
         }
     }
@@ -101,9 +101,12 @@ public class ShopUI : MonoBehaviour
 
     bool Payment(int _gold)
     {
-        if (curGold >= _gold)
+        if (Player.instance.curMoney >= _gold)
         {
-            curGold -= _gold;
+            Debug.Log(_gold);
+            Player.instance.curMoney -= _gold;
+            Debug.Log($"{Player.instance.curMoney}");
+
             return isPay = true;
         }
         else

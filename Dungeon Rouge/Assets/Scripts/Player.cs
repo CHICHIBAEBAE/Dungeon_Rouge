@@ -15,4 +15,8 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public int curMoney;
+    public int curHP;
+    
 }
