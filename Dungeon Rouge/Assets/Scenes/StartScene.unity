@@ -431,9 +431,11 @@ MonoBehaviour:
   effectSlider: {fileID: 710750415}
   onOffTxt: {fileID: 1551317267}
   clipList:
-  - {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
-  - {fileID: 8300000, guid: 6e8772b49f34d402a90016ed445d8a2f, type: 3}
-  - {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+  - {fileID: 8300000, guid: 595bb2b7dee156c4ab7d32e516bb8801, type: 3}
+  - {fileID: 8300000, guid: 156fa059c7184dc4cbe38e79c1562c2c, type: 3}
+  - {fileID: 8300000, guid: 891d84918315a4c4896501026dda98e0, type: 3}
+  - {fileID: 8300000, guid: ea30baa5c9fc06b40b4d97d665d24a8e, type: 3}
+  - {fileID: 8300000, guid: 9b2f19940e4d19f4cb7ecaeff8e0a2e5, type: 3}
 --- !u!4 &204647964
 Transform:
   m_ObjectHideFlags: 0
@@ -1312,7 +1314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492790906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbc78b37818b00840b21f781bf9542d5, type: 3}
   m_Name: 
