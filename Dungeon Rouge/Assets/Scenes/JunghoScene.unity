@@ -4646,7 +4646,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   audioSorce: {fileID: 0}
   Btn: {fileID: 0}
-  num: 3
+  num: 0
 --- !u!1 &1490934733
 GameObject:
   m_ObjectHideFlags: 0

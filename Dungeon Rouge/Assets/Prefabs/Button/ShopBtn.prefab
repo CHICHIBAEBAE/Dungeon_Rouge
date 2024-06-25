@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 6514021150230435330}
   - component: {fileID: 7397388320382507377}
   - component: {fileID: 1699975489176354693}
+  - component: {fileID: 8232544859273344836}
   m_Layer: 5
   m_Name: ShopBtn
   m_TagString: Untagged
@@ -231,6 +232,22 @@ MonoBehaviour:
   animName: PageOpen
   btn: {fileID: 7397388320382507377}
   btnData: {fileID: 11400000, guid: b38fab7248ef33d439dfbacb5c90e811, type: 2}
+--- !u!114 &8232544859273344836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322103685201041910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &8600154604778775239
 GameObject:
   m_ObjectHideFlags: 0

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 4476864455530446550}
   - component: {fileID: 6575908690245281074}
   - component: {fileID: 4884850994959531256}
+  - component: {fileID: -7337671581531250308}
   m_Layer: 5
   m_Name: MysteryBtn
   m_TagString: Untagged
@@ -227,6 +228,22 @@ MonoBehaviour:
   animName: PageOpen
   btn: {fileID: 6575908690245281074}
   btnData: {fileID: 11400000, guid: 3fbada429a9f5c84ca0e6d09a00181a8, type: 2}
+--- !u!114 &-7337671581531250308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840556331488201152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &5872963434836157439
 GameObject:
   m_ObjectHideFlags: 0

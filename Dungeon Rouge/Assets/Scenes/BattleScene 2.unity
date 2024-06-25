@@ -1272,7 +1272,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   audioSorce: {fileID: 0}
   Btn: {fileID: 0}
-  num: 0
+  num: 3
 --- !u!1 &375976620
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2067,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   audioSorce: {fileID: 0}
   Btn: {fileID: 0}
-  num: 0
+  num: 3
 --- !u!1 &775261794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,7 +2882,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   audioSorce: {fileID: 0}
   Btn: {fileID: 0}
-  num: 0
+  num: 3
 --- !u!1 &1063009130
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,7 +4019,7 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   audioSorce: {fileID: 0}
   Btn: {fileID: 0}
-  num: 0
+  num: 3
 --- !u!1 &1639861056
 GameObject:
   m_ObjectHideFlags: 0

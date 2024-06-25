@@ -31,7 +31,8 @@ public class ShopUI : MonoBehaviour
         curHp = Player.instance.curHP;
         maxHP = characterStatHandler.CurrentStat.statData.MaxHealth;
         curGold = Player.instance.curMoney;
-        OnRerole(0);        
+        OnRerole(0);
+        OutputTxt.text="";
     }
     void ShowDisplay()
     {
@@ -60,7 +61,7 @@ public class ShopUI : MonoBehaviour
             curHp=Player.instance.curHP;
             Player.instance.curHP = maxHP;
             isPay = !isPay;
-            OutputTxt.text=$"{curHp}HP 최대회복= {Player.instance.curHP}HP";            
+            OutputTxt.text=$"{curHp}HP 최대회복= {Player.instance.curHP}HP";
         }
     }
 
