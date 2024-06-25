@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class BattleController : MonoBehaviour
 {
-    [SerializeField] private CharacterStatHandler characterStatHandler; // ĳ���� ������ �����ϴ� �ڵ鷯
-    [SerializeField] private CharacterStatHandler enemyStatHandler;
+    protected CharacterStatHandler characterStatHandler; // ĳ���� ������ �����ϴ� �ڵ鷯
+    protected CharacterStatHandler enemyStatHandler;
 
     public List<CharacterStat> statsModifiers = new List<CharacterStat>();
 
