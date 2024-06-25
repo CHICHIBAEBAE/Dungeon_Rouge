@@ -9,6 +9,7 @@ public class ShopUI : MonoBehaviour
     public Text ItemName;
     public Text ItemInfo;
     public Text playerHaveGoldTxt;
+    public Text OutputTxt;
     public List<ItemData> ItemList;
     int[] r = new int[4];
     public CharacterStat ItemStats;
@@ -27,7 +28,7 @@ public class ShopUI : MonoBehaviour
     {
         player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
-        curHp = characterStatHandler.CurrentStat.statData.CurHealth;
+        curHp = Player.instance.curHP;
         maxHP = characterStatHandler.baseStats.statData.MaxHealth;
         curGold = Player.instance.curMoney;
         OnRerole(0);        
@@ -56,9 +57,10 @@ public class ShopUI : MonoBehaviour
         Payment(gold);
         if (isPay)
         {
-            Debug.Log("회복");
-            curHp = maxHP;
+            curHp=Player.instance.curHP;
+            Player.instance.curHP = maxHP;
             isPay = !isPay;
+            OutputTxt.text=$"{curHp}HP 최대회복= {Player.instance.curHP}HP";
         }
     }
 
@@ -66,17 +68,17 @@ public class ShopUI : MonoBehaviour
     {
         Payment(ItemStats.statData.PlayerHaveGold);
         if (isPay)
-        {
-            Debug.Log("구매");
+        {   
+            OutputTxt.text=$"구매완료: {ItemName.text}";
             characterStatHandler.AddStatModifier(ItemStats);
-            //stamp.SetActive(true);
             playerHaveGoldTxt.text = Player.instance.curMoney.ToString();
             isPay = !isPay;
         }
     }
 
     public void OnRerole(int gold)
-    {
+    {   
+        OutputTxt.text="전시대 새로고침";
         Payment(gold);
         if (isPay)
         {
@@ -102,16 +104,13 @@ public class ShopUI : MonoBehaviour
     bool Payment(int _gold)
     {
         if (Player.instance.curMoney >= _gold)
-        {
-            Debug.Log(_gold);
+        {            
             Player.instance.curMoney -= _gold;
-            Debug.Log($"{Player.instance.curMoney}");
-
             return isPay = true;
         }
         else
         {
-            Debug.Log("님돈없");
+            OutputTxt.text="님돈없";
             return isPay = false;
         }
     }

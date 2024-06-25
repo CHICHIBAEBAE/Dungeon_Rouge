@@ -23,7 +23,11 @@ public class BGMManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        BGMSource=GetComponent<AudioSource>();        
+        BGMSource=GetComponent<AudioSource>();                
+    }
+    void Start()    
+    {
+        audioMixer.SetFloat("BGM", -20f);
     }
     void Update()
     {

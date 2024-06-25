@@ -37,6 +37,7 @@ public class CharacterStatHandler : MonoBehaviour
         }
         CharacterStat Itemstat = new CharacterStat{ statData=statD };
         Itemstat.statsChangeType=statModifier.statsChangeType;
+        Player.instance.curHP+=Itemstat.statData.MaxHealth;
 
         statsModifiers.Add(Itemstat);
         UpdateCharacterStat();

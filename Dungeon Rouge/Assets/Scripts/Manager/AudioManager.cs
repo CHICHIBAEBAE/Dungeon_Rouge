@@ -24,7 +24,11 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        EffectSource=GetComponent<AudioSource>();
+        EffectSource=GetComponent<AudioSource>();        
+    }
+    void Start()    
+    {
+        audioMixer.SetFloat("SFX", -20f);
     }
 
     public void ToggleVolume()

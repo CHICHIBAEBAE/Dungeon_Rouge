@@ -10,6 +10,7 @@ public class RandomUI : MonoBehaviour
     public GameObject ranPanel;
     public GameObject Description;
     public Text playerHaveGoldTxt;
+    public Text OutputTxt;
     public Text EventName;
     public Text EventInfo;
     public Text Choice1;
@@ -63,7 +64,7 @@ public class RandomUI : MonoBehaviour
         if(_btnNum==0)
         {            
             foreach (EventStat stat in eventData.eventModifiers1.OrderBy(o => o.eventType))
-            {                
+            {   
                 StartEventModifier(stat);
             }           
         }
@@ -78,21 +79,22 @@ public class RandomUI : MonoBehaviour
     }   
     void StartEventModifier(EventStat stat)
     {        
-        int percent=Random.Range(0,10);
-        //Debug.Log("percent: "+10*stat.percent+">="+percent);
+        int percent=Random.Range(0,10);        
         if(percent<=10*stat.percent && !isMoveScene)
-        {   
-            //Debug.Log("확률 당첨");
+        { 
             switch(stat.eventType)
             {
                 case EventType.GiveGold:                    
-                        Debug.Log("골드획득 "+ stat.intNum);
+                        //Debug.Log("골드획득 "+ stat.intNum);
                         Player.instance.curMoney +=stat.intNum;
                         playerHaveGoldTxt.text = $"{Player.instance.curMoney}";
+                        OutputTxt.text=$"{stat.intNum} 원 획득";  
                 break;
                 case EventType.GiveMaxHealth:                    
-                        Debug.Log("체력회복 "+ stat.intNum);
-                        Player.instance.curHP +=stat.intNum;
+                        //Debug.Log("체력회복 "+ stat.intNum);
+                        curHp=Player.instance.curHP;
+                        Player.instance.curHP +=stat.intNum;                        
+                        OutputTxt.text=$"{curHp}HP {stat.intNum}= {Player.instance.curHP}HP";
                 break;
                 case EventType.GiveLv:                    
                         Debug.Log("렙업 : "+ stat.intNum);
@@ -102,7 +104,7 @@ public class RandomUI : MonoBehaviour
                         int ran=Random.Range(0,shopList.Count);
                         ItemStats.statData=shopList[ran];
                         characterStatHandler.AddStatModifier(ItemStats); 
-                        Debug.Log("유물획득 : "+ shopList[ran].ItemName);
+                        OutputTxt.text=$"획득:{shopList[ran].ItemName}";
                 break;
                 default:
                   isMoveScene=true;
@@ -116,26 +118,24 @@ public class RandomUI : MonoBehaviour
         DataManager.instance.styleIdx=num;
         if(num==1||num==2)
         {
-            Debug.Log("전투씬으로 이동");            
+            OutputTxt.text="전장 이동";            
             StartCoroutine(SceneMoveTime(2));
         }
         else if(num==3)
         {
-            Debug.Log("이벤트씬(상점)으로 이동");
+             OutputTxt.text="상점 이동";
             StartCoroutine(SceneMoveTime(3));
         }
         else
         {
-            Debug.Log("맵으로 이동");                        
+             //OutputTxt.text="맵으로 이동";                       
             StartCoroutine(SceneMoveTime(1));
         }
     }
     IEnumerator SceneMoveTime(int num)
     {           
         yield return new WaitForSeconds(2);
-        isMoveScene=false;
-        //Debug.Log("[맵연결 안됐으니 이벤트 1번더]");
-        //Start();
+        isMoveScene=false;        
         SceneManager.LoadScene(num);
     }
 }
