@@ -1231,7 +1231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &492790907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1343,8 +1343,16 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: f5246c3b1da94bb40bec4fadf75d18d9, type: 2}
   BGMSlider: {fileID: 217878883}
   clipList:
-  - {fileID: 8300000, guid: 90eae78e8ce85a849b5b0ca11b2de641, type: 3}
-  - {fileID: 8300000, guid: e51bb74e3524c7a4e86d0d1e75181594, type: 3}
+  - {fileID: 8300000, guid: 033766cc31c97904bae4404b8a079544, type: 3}
+  - {fileID: 8300000, guid: fc5af015011ea3745b7f78ea1dd1049f, type: 3}
+  - {fileID: 8300000, guid: 559c232a43caebe41870ce54786f604e, type: 3}
+  - {fileID: 8300000, guid: 51a4f1157b7ff1449b5e5cf064d584c7, type: 3}
+  - {fileID: 8300000, guid: 06906d718be5b6a4cb2df8732bf39832, type: 3}
+  - {fileID: 8300000, guid: 89f935015cc98724a862a586326fdf21, type: 3}
+  - {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
+  - {fileID: 8300000, guid: bef0cef2ded0f0645ad90c6e5bdd4965, type: 3}
+  - {fileID: 8300000, guid: 35967e8a4dfb1664e9b066939272c0a4, type: 3}
+  - {fileID: 8300000, guid: 1f2ad53bacc245642854dbdc8ea71a9b, type: 3}
 --- !u!4 &492790909
 Transform:
   m_ObjectHideFlags: 0
