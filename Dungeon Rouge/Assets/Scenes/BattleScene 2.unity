@@ -1978,7 +1978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterStatHandler: {fileID: 5388366958190719042}
-  player: {fileID: 780087475246255858}
+  player: {fileID: 0}
   playerLevelTxt: {fileID: 221024748}
   playerHpTxt: {fileID: 1024288816}
   playerAtkTxt: {fileID: 156853710}
@@ -5552,7 +5552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &924988812165813836
 MonoBehaviour:
   m_ObjectHideFlags: 0
