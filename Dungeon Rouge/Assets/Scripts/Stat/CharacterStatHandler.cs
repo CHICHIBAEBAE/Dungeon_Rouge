@@ -89,4 +89,10 @@ public class CharacterStatHandler : MonoBehaviour
         currentStat.MaxHealth = Mathf.Max((int)operation(currentStat.MaxHealth, newStat.MaxHealth), MinMaxHealth);
         currentStat.PlayerHaveGold = Mathf.Max((int)operation(currentStat.PlayerHaveGold, newStat.PlayerHaveGold), MinPlayerHaveGold);
     }
+
+    public void RemoveAllStatModifier()
+    {
+        statsModifiers.Clear();
+        UpdateCharacterStat();
+    }
 }
