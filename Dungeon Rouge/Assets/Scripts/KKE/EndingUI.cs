@@ -9,7 +9,7 @@ public class EndingUI : MonoBehaviour
 {
     public Text endUI;
     
-    string message = $"���� : ��ġ�� ���� : �谭�� ���� : ����ȣ ���� : ������";
+    string message = $"팀장 : 윤치훈 팀원 : 김강은 팀원 : 이정호 팀원 : 하현우";
 
     private void Start()
     {
