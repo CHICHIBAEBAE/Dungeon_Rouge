@@ -37,6 +37,7 @@ public class EnemyChoice : MonoBehaviour
                 bossBG.SetActive(false);
                 return;
             case 2:
+                BGMManager.BGMinstance.BGMStop();
                 normalEnemy.SetActive(false);
                 eliteEnemy.SetActive(false);
                 bossEnemy.SetActive(true);
