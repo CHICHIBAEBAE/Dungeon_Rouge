@@ -1363,6 +1363,7 @@ GameObject:
   - component: {fileID: 1180179251}
   - component: {fileID: 1180179250}
   - component: {fileID: 1180179253}
+  - component: {fileID: 1180179254}
   m_Layer: 5
   m_Name: CheckBtn
   m_TagString: Untagged
@@ -1498,6 +1499,22 @@ MonoBehaviour:
   stamp: {fileID: 7767613855265819173}
   sceneName: 
   btnData: {fileID: 0}
+--- !u!114 &1180179254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180179248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 4
 --- !u!1 &1365114550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,6 +2125,7 @@ GameObject:
   - component: {fileID: 1953663476}
   - component: {fileID: 1953663475}
   - component: {fileID: 1953663478}
+  - component: {fileID: 1953663479}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -2232,6 +2250,22 @@ MonoBehaviour:
   animName: PageClose
   exitBtn: {fileID: 1953663475}
   description: {fileID: 45876818}
+--- !u!114 &1953663479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953663473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 1
 --- !u!1 &2105415265 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3709957092125257237, guid: a2cbf0b351cea7e469a2fd6c7164493d, type: 3}
@@ -3369,6 +3403,7 @@ GameObject:
   - component: {fileID: 8263825817829295202}
   - component: {fileID: 5184559813291377345}
   - component: {fileID: 3865777607620157785}
+  - component: {fileID: 8263825817829295203}
   m_Layer: 31
   m_Name: NormalBtn
   m_TagString: Button
@@ -4172,6 +4207,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8263825817829295203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540580411490621342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &8268436667176921047
 GameObject:
   m_ObjectHideFlags: 0

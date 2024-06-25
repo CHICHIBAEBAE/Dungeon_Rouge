@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 41531815}
   - component: {fileID: 41531814}
   - component: {fileID: 41531813}
+  - component: {fileID: 41531816}
   m_Layer: 0
   m_Name: HealBtn
   m_TagString: Untagged
@@ -339,6 +340,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41531811}
   m_CullTransparentMesh: 1
+--- !u!114 &41531816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41531811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 2
 --- !u!1 &48838451
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +901,7 @@ GameObject:
   - component: {fileID: 329082847}
   - component: {fileID: 329082849}
   - component: {fileID: 329082850}
+  - component: {fileID: 329082851}
   m_Layer: 5
   m_Name: DisplayStand1
   m_TagString: Untagged
@@ -1017,6 +1035,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: OnSoundBtn
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &329082850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,6 +1062,22 @@ MonoBehaviour:
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
+--- !u!114 &329082851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329082845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &411697939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,6 +1394,7 @@ GameObject:
   - component: {fileID: 429357683}
   - component: {fileID: 429357682}
   - component: {fileID: 429357681}
+  - component: {fileID: 429357684}
   m_Layer: 0
   m_Name: ReroleBtn
   m_TagString: Untagged
@@ -1473,6 +1520,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429357679}
   m_CullTransparentMesh: 1
+--- !u!114 &429357684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429357679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 2
 --- !u!1 &432044307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2539,7 @@ GameObject:
   - component: {fileID: 957649846}
   - component: {fileID: 957649845}
   - component: {fileID: 957649844}
+  - component: {fileID: 957649847}
   m_Layer: 5
   m_Name: BayCheck
   m_TagString: Untagged
@@ -2596,6 +2660,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957649842}
   m_CullTransparentMesh: 1
+--- !u!114 &957649847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957649842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 3
 --- !u!1 &974042349
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,6 +3519,7 @@ GameObject:
   - component: {fileID: 1185987639}
   - component: {fileID: 1185987641}
   - component: {fileID: 1185987638}
+  - component: {fileID: 1185987642}
   m_Layer: 5
   m_Name: Choice1
   m_TagString: Untagged
@@ -3576,6 +3657,22 @@ MonoBehaviour:
   animName: PageClose
   exitBtn: {fileID: 1185987638}
   description: {fileID: 1314542398}
+--- !u!114 &1185987642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185987636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &1189203267
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +4012,7 @@ GameObject:
   - component: {fileID: 1317592396}
   - component: {fileID: 1317592398}
   - component: {fileID: 1317592395}
+  - component: {fileID: 1317592399}
   m_Layer: 5
   m_Name: Choice2
   m_TagString: Untagged
@@ -4052,6 +4150,22 @@ MonoBehaviour:
   animName: PageClose
   exitBtn: {fileID: 1317592395}
   description: {fileID: 1314542398}
+--- !u!114 &1317592399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317592393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &1392700972
 GameObject:
   m_ObjectHideFlags: 0
@@ -4380,6 +4494,7 @@ GameObject:
   - component: {fileID: 1483924648}
   - component: {fileID: 1483924647}
   - component: {fileID: 1483924646}
+  - component: {fileID: 1483924650}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -4516,6 +4631,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483924644}
   m_CullTransparentMesh: 1
+--- !u!114 &1483924650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483924644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 3
 --- !u!1 &1490934733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4687,6 +4818,7 @@ GameObject:
   - component: {fileID: 1529544622}
   - component: {fileID: 1529544621}
   - component: {fileID: 1529544620}
+  - component: {fileID: 1529544624}
   m_Layer: 5
   m_Name: ChoiceExit
   m_TagString: Untagged
@@ -4836,6 +4968,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529544618}
   m_CullTransparentMesh: 1
+--- !u!114 &1529544624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529544618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &1569922245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5464,6 +5612,7 @@ GameObject:
   - component: {fileID: 1757037739}
   - component: {fileID: 1757037741}
   - component: {fileID: 1757037742}
+  - component: {fileID: 1757037743}
   m_Layer: 5
   m_Name: DisplayStand4
   m_TagString: Untagged
@@ -5612,6 +5761,22 @@ MonoBehaviour:
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
+--- !u!114 &1757037743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757037737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &1762347169
 GameObject:
   m_ObjectHideFlags: 0
@@ -5625,6 +5790,7 @@ GameObject:
   - component: {fileID: 1762347171}
   - component: {fileID: 1762347173}
   - component: {fileID: 1762347174}
+  - component: {fileID: 1762347175}
   m_Layer: 5
   m_Name: DisplayStand3
   m_TagString: Untagged
@@ -5773,6 +5939,22 @@ MonoBehaviour:
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
+--- !u!114 &1762347175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762347169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &1795809107
 GameObject:
   m_ObjectHideFlags: 0
@@ -6387,6 +6569,7 @@ GameObject:
   - component: {fileID: 1996358459}
   - component: {fileID: 1996358458}
   - component: {fileID: 1996358457}
+  - component: {fileID: 1996358460}
   m_Layer: 0
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -6510,6 +6693,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996358455}
   m_CullTransparentMesh: 1
+--- !u!114 &1996358460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996358455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 1
 --- !u!1 &2010066604
 GameObject:
   m_ObjectHideFlags: 0
@@ -6523,6 +6722,7 @@ GameObject:
   - component: {fileID: 2010066606}
   - component: {fileID: 2010066608}
   - component: {fileID: 2010066609}
+  - component: {fileID: 2010066610}
   m_Layer: 5
   m_Name: DisplayStand2
   m_TagString: Untagged
@@ -6671,6 +6871,22 @@ MonoBehaviour:
   description: {fileID: 1569922245}
   anim: {fileID: 1569922247}
   animName: PageOpen
+--- !u!114 &2010066610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010066604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e3fcaf25067df34d8e2b3c3b085e003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
+  audioSorce: {fileID: 0}
+  Btn: {fileID: 0}
+  num: 0
 --- !u!1 &2058566278
 GameObject:
   m_ObjectHideFlags: 0
