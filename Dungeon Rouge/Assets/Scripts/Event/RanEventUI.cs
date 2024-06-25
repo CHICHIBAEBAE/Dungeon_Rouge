@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class RandomUI : MonoBehaviour
 {
+    public GameObject loadScene;
     public GameObject ranPanel;
     public GameObject Description;
     public Text playerHaveGoldTxt;
@@ -118,23 +119,26 @@ public class RandomUI : MonoBehaviour
         DataManager.instance.styleIdx=num;
         if(num==1||num==2)
         {
-            OutputTxt.text="전장 이동";            
+            OutputTxt.text="전장 이동";
+            loadScene.SetActive(true);
             StartCoroutine(SceneMoveTime(2));
         }
         else if(num==3)
         {
              OutputTxt.text="상점 이동";
+            loadScene.SetActive(true);
             StartCoroutine(SceneMoveTime(3));
         }
         else
         {
-             //OutputTxt.text="맵으로 이동";                       
+            //OutputTxt.text="맵으로 이동";                       
+            loadScene.SetActive(true);
             StartCoroutine(SceneMoveTime(1));
         }
     }
     IEnumerator SceneMoveTime(int num)
     {           
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         isMoveScene=false;        
         SceneManager.LoadScene(num);
     }

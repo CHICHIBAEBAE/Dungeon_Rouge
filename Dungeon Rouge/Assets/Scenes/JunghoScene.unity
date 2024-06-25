@@ -5352,6 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7aa120fc1aef214f95ecf231b25f839, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: {fileID: 233129519241299503}
   ranPanel: {fileID: 974042349}
   Description: {fileID: 1314542398}
   playerHaveGoldTxt: {fileID: 1527033071}
