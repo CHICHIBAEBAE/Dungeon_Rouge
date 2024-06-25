@@ -53,7 +53,7 @@ public class EventSceneUI : MonoBehaviour
     }
     IEnumerator EventExit()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(1);
         DataManager.instance.styleIdx=0;
     }

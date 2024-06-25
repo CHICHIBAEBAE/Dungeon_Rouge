@@ -20,7 +20,7 @@ MonoBehaviour:
   eventModifiers1:
   - eventType: 0
     percent: 1
-    intNum: 200
+    intNum: 400
   - eventType: 4
     percent: 0.2
     intNum: 1
