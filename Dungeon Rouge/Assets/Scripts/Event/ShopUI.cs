@@ -28,7 +28,7 @@ public class ShopUI : MonoBehaviour
         player = Player.instance.gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
         curHp = characterStatHandler.CurrentStat.statData.CurHealth;
-        maxHP = characterStatHandler.baseStats.statData.MaxHealth;
+        maxHP = characterStatHandler.CurrentStat.statData.MaxHealth;
         curGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
         OnRerole(0);        
     }
