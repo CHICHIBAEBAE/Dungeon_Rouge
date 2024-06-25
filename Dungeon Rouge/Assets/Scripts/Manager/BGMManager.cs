@@ -29,25 +29,29 @@ public class BGMManager : MonoBehaviour
     }
     void Start()    
     {
-        audioMixer.SetFloat("BGM", -20f);
+        audioMixer.SetFloat("BGM", -20f);        
     }
     void Update()
-    {
-        if(DataManager.instance.styleIdx==2)
-        {   
-            BGMSource.Stop();          
-            BGMSource.clip=BossClip;
-        }
-        else if (DataManager.instance.styleIdx==9)
-        {      
-            BGMSource.Stop();
-            BGMSource.clip=EndingClip; 
-        }
-        else if (!BGMSource.isPlaying)
+    { 
+        if(!BGMSource.isPlaying)
         {
-            BGMSource.clip = clipList[Random.Range(0, clipList.Count)];           
-        }        
-        BGMSource.Play();
+            if(DataManager.instance.styleIdx==2)
+            {                   
+                BGMSource.clip=BossClip;
+            }
+            else if (DataManager.instance.styleIdx==9)
+            {  
+                BGMSource.clip=EndingClip;                 
+            }
+            else BGMSource.clip = clipList[Random.Range(0, clipList.Count)];
+
+            BGMSource.Play();
+        }
+    }
+
+    public void BGMStop()
+    {
+        BGMSource.Stop();
     }
 
     public void BGMAudioControl()

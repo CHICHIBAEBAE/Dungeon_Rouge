@@ -122,6 +122,7 @@ public class BattleController : MonoBehaviour
             {
                 loadScene.SetActive(true);
                 DataManager.instance.styleIdx =9;
+                BGMManager.BGMinstance.BGMStop();
                 yield return new WaitForSeconds(2f);
                 SceneManager.LoadScene(4);
             }
