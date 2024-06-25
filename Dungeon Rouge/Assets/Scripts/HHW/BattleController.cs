@@ -120,6 +120,13 @@ public class BattleController : MonoBehaviour
             {
                 yield return StartCoroutine(TypeText($"Player Get {eliteEnemyReward} Gold"));
             }
+            else if(DataManager.instance.styleIdx == 2)
+            {
+                loadScene.SetActive(true);
+                //BGMManager.BGMinstance.
+                yield return new WaitForSeconds(2f);
+                SceneManager.LoadScene(4);
+            }
             Reward();
             yield return new WaitForSeconds(1f);
 
