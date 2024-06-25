@@ -25,6 +25,10 @@ public class BattleController : MonoBehaviour
     public int eliteEnemyReward;
     public int playerHasGold;
 
+    public GameObject loadScene;
+    public Animator anim;
+    public string animName;
+
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
     private bool playerActionCompleted = false; // 플레이어의 행동이 완료되었는지 여부를 나타내는 플래그
 
@@ -32,6 +36,11 @@ public class BattleController : MonoBehaviour
 
     void Start()
     {
+        loadScene.SetActive(true);
+        anim.Play(animName);
+
+        StartCoroutine(WaitForAnimation(anim, animName));
+        
         player = FindObjectOfType<Player>().gameObject;
         enemy = FindObjectOfType<Enemy>().gameObject;
         characterStatHandler = player.GetComponent<CharacterStatHandler>();
@@ -46,6 +55,16 @@ public class BattleController : MonoBehaviour
         enemyHPBar.value = enemyStatHandler.CurrentStat.statData.MaxHealth; // 슬라이더를 적의 현재 체력 값으로 초기화
         playerHasGold = characterStatHandler.CurrentStat.statData.PlayerHaveGold;
         StartCoroutine(Battle()); // 배틀 코루틴 시작
+    }
+
+    public IEnumerator WaitForAnimation(Animator anim, string animName)
+    {
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        float animationDuration = stateInfo.length;
+
+        yield return new WaitForSeconds(animationDuration);
+
+        loadScene.SetActive(false);
     }
 
     IEnumerator Battle()
@@ -96,9 +115,14 @@ public class BattleController : MonoBehaviour
             }
             Reward();
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene("KKEScene");
+            Invoke("LoadScene", 1.5f);
             Debug.Log("Enemy is defeated");
         }
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(1);
     }
 
     void Reward()
