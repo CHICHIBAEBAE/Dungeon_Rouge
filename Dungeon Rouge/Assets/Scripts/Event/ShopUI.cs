@@ -35,8 +35,7 @@ public class ShopUI : MonoBehaviour
         OutputTxt.text="";
     }
     void ShowDisplay()
-    {
-        playerHaveGoldTxt.text = $"{Player.instance.curMoney}";
+    {        
         for (int i = 0; i < 4; i++)
         {
             ItemImg[i].sprite = ItemList[r[i]].ItemImg;
@@ -71,8 +70,7 @@ public class ShopUI : MonoBehaviour
         if (isPay)
         {   
             OutputTxt.text=$"구매완료: {ItemName.text}";
-            characterStatHandler.AddStatModifier(ItemStats);
-            playerHaveGoldTxt.text = Player.instance.curMoney.ToString();
+            characterStatHandler.AddStatModifier(ItemStats);            
             isPay = !isPay;
             maxHP=characterStatHandler.CurrentStat.statData.MaxHealth;
         }
@@ -108,6 +106,7 @@ public class ShopUI : MonoBehaviour
         if (Player.instance.curMoney >= _gold)
         {            
             Player.instance.curMoney -= _gold;
+            playerHaveGoldTxt.text = Player.instance.curMoney.ToString();
             return isPay = true;
         }
         else

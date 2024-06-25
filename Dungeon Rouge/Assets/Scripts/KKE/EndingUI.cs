@@ -30,7 +30,8 @@ public class EndingUI : MonoBehaviour
 
     private void LoadScene()
     {
-        BGMManager.BGMinstance.BGMStop();
+        DataManager.instance.styleIdx =1;
+        BGMManager.BGMinstance.BGMStop();        
         SceneManager.LoadScene(0);
     }
 }
