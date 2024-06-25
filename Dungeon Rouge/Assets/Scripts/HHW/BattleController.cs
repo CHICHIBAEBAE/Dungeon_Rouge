@@ -22,7 +22,7 @@ public class BattleController : MonoBehaviour
     public float typingSpeed = 0.1f;  // 배틀 로그 텍스트가 출력되는 속도
     private int curHP;
     public int normalEnemyReward;
-    public int EliteEnemyReward;
+    public int eliteEnemyReward;
     public int playerHasGold;
 
     private bool isPlayerTurn = true; // 현재 턴이 플레이어의 턴인지 여부를 나타내는 플래그
@@ -71,7 +71,7 @@ public class BattleController : MonoBehaviour
                 Debug.Log("Enemy's Turn completed"); 
                 isPlayerTurn = true; // 플레이어의 턴으로 전환
             } 
-            yield return new WaitForSeconds(4.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
+            yield return new WaitForSeconds(2.0f); // 턴 사이에 4초 대기 -> 한 글자씩 타이핑 하는데 시간이 걸려 공격 처리 때 글자가 다 나오는데 4초정도 걸려서 4초대기설정
         }
 
         if (curHP <= 0) // 플레이어가 패배한 경우
@@ -85,9 +85,19 @@ public class BattleController : MonoBehaviour
         else if (enemyStatHandler.CurrentStat.statData.MaxHealth <= 0)
         {
             enemyAnimator.SetTrigger("Death");
-            Reward();
-            Debug.Log("Enemy is defeated");
             yield return StartCoroutine(TypeText("Enemy is defeated")); // "Enemy is defeated" 텍스트 출력
+            if(DataManager.instance.styleIdx == 0)
+            {
+                yield return StartCoroutine(TypeText($"Player Get {normalEnemyReward} Gold"));
+            }
+            else if(DataManager.instance.styleIdx == 1)
+            {
+                yield return StartCoroutine(TypeText($"Player Get {eliteEnemyReward} Gold"));
+            }
+            Reward();
+            yield return new WaitForSeconds(1f);
+            SceneManager.LoadScene("KKEScene");
+            Debug.Log("Enemy is defeated");
         }
     }
 
@@ -99,7 +109,7 @@ public class BattleController : MonoBehaviour
         }
         else if (DataManager.instance.styleIdx == 1)
         {
-            playerHasGold += EliteEnemyReward;
+            playerHasGold += eliteEnemyReward;
         }
     }
 
@@ -139,7 +149,7 @@ public class BattleController : MonoBehaviour
         foreach (char letter in message.ToCharArray()) // 메시지의 각 문자를 순차적으로
         {
             battleLog.text += letter; // 배틀로그에 추가
-            yield return new WaitForSeconds(typingSpeed); //타이핑 속도만큼 대기
+            yield return new WaitForSeconds(0.01f); //타이핑 속도만큼 대기
         }
     }
 
