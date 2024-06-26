@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467d25e047814e5499adc31e502471fd, type: 3}
+  m_Name: LegendSword
+  m_EditorClassIdentifier: 
+  Atk: 20
+  CurHealth: 0
+  MaxHealth: 0
+  PlayerHaveGold: 0
+  ItemImg: {fileID: 21300000, guid: 0027a5e8b703fa345a81a833b17e2f12, type: 3}
+  ItemName: "\uC804\uC124\uC758\uAC80"
+  ItemInfo: "\uC804\uC124\uC758\uAC80\uC774\uB2E4 \uACF5\uACA9\uB825\uC744 +20 \uD55C\uB2E4"
+  ItemGold: 400

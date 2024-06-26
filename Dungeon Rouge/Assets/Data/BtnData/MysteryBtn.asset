@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
+  m_Name: MysteryBtn
+  m_EditorClassIdentifier: 
+  btnIcon: {fileID: 156918593, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  btnName: "<color=yellow>\uBBF8\uC2A4\uD14C\uB9AC</color>"
+  btnDescription: 
+  loadSceneName: JunghoScene
+  styleidx: 4
+  resultIcon: {fileID: -922909782, guid: 29d8eb0860edd9c4783ef5de17ce2ba1, type: 3}
+  resultName: ???
+  stageName: "<color=yellow>\uBBF8\uC2A4\uD14C\uB9AC \uC2A4\uD14C\uC774\uC9C0</color>"
+  stageDescription: "\uBB34\uC5C7\uC744 \uC5BB\uC744 \uC9C0 \uC54C \uC218 \uC5C6\uC74C"
+  prefab: {fileID: 1840556331488201152, guid: 98cde0565f93196458b752e5861c385d, type: 3}
+  probability: 0.2
