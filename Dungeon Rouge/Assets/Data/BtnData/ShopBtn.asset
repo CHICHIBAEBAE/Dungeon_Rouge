@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a28b94ddaf5134bb3e2085d0b58010, type: 3}
+  m_Name: ShopBtn
+  m_EditorClassIdentifier: 
+  btnIcon: {fileID: 398192993, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
+  btnName: "<color=blue>\uC0C1 \uC810</color>"
+  btnDescription: 
+  loadSceneName: JunghoScene
+  styleidx: 3
+  resultIcon: {fileID: 1780668137, guid: 092891a7e8a533a49b0f3013fa67b528, type: 3}
+  resultName: "\uC544\uC774\uD15C \uAD6C\uB9E4 \uAC00\uB2A5"
+  stageName: "<color=blue>\uC0C1 \uC810 \uC2A4\uD14C\uC774\uC9C0</color>"
+  stageDescription: "\uAE08\uD654\uB97C \uC0AC\uC6A9\uD558\uC5EC \uC544\uC774\uD15C
+    \uAD6C\uB9E4 \uAC00\uB2A5"
+  prefab: {fileID: 7322103685201041910, guid: 524671f88e1dc8f418d309cd4745d367, type: 3}
+  probability: 0.2

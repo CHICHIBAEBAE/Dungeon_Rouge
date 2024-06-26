@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff43cc9ab586811419577d806bf62cae, type: 3}
+  m_Name: EventData2
+  m_EditorClassIdentifier: 
+  EventName: "\uCE58\uC720\uC758 \uC0D8\uC744 \uBC1C\uACAC"
+  EventInfo: "\uB9C8\uC2DC\uBA74 \uC783\uC5C8\uB358 \uCCB4\uB825\uC774 \uD68C\uBCF5
+    \uB420\uAC83 \uAC19\uB2E4"
+  EventChoice1: "\uB2F4\uC544\uC11C \uD310\uB9E4"
+  EventChoice2: "\uB9C8\uC2E0\uB2E4"
+  eventModifiers1:
+  - eventType: 0
+    percent: 1
+    intNum: 200
+  - eventType: 4
+    percent: 1
+    intNum: 0
+  EventOnChoice2: 1
+  eventModifiers2:
+  - eventType: 1
+    percent: 1
+    intNum: 50
+  - eventType: 4
+    percent: 1
+    intNum: 0
+  EventOnChoice3: 1
